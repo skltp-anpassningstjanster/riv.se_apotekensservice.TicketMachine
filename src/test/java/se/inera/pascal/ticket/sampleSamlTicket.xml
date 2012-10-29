@@ -1,0 +1,308 @@
+<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+	ID="_7a460ac7da7dcd0c5f2fbab6110266bf" IssueInstant="2011-09-23T07:25:25.349Z"
+	Version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<saml2:Issuer>pascalonline</saml2:Issuer>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<ds:SignedInfo>
+			<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<ds:Reference URI="#_7a460ac7da7dcd0c5f2fbab6110266bf">
+				<ds:Transforms>
+					<ds:Transform
+						Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+						<ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+							PrefixList="xs" />
+					</ds:Transform>
+				</ds:Transforms>
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<ds:DigestValue>GavcRp9Rgqp8ZgDTg5TW48yXYh0=</ds:DigestValue>
+			</ds:Reference>
+		</ds:SignedInfo>
+		<ds:SignatureValue>S75xeFB0S9UEhYlOi5DnkL3JILr6U4ek31veqFW23q9DBGnvkJYBJBCanJf7bpVCkVJ4mP1vUVAVNzMKmYFDREmYuLus9BOhCQf5WEq7RW2y01AW/W/rn1yrMUtgiB9LvcPZklBvtkjPhQOEVrXxye9+6/DBE26vzIobsRmNBAI=
+		</ds:SignatureValue>
+		<ds:KeyInfo>
+			<ds:X509Data>
+				<ds:X509Certificate>MIICmzCCAYOgAwIBAgIQwPe6IqwQNKlKA7zNSdf+ejANBgkqhkiG9w0BAQ0FADAkMQ4wDAYDVQQK
+					EwVJbmVyYTESMBAGA1UEAxMJUGFzY2FsIENBMB4XDTExMDEyMTEzNTczNFoXDTM5MTIzMTIzNTk1
+					OVowGDEWMBQGA1UEAxMNUGFzY2FsIE9ubGluZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA
+					oLUMi3SzBgcbnB/xP4Mkvpa2Ag2Zxp29le8Ps8e7Zc+CrQdvd/UsQVO++8sAfMpLL8Pp+uj70WVE
+					KAzuFK1TyYf8EFfqnROrp1vZYNQvEBiHdiapa5u0Pja29fQvNIV68Eq2o/akReuIQfqq55MIkmn7
+					yrA6Uxn+foh+83xHIE0CAwEAAaNZMFcwVQYDVR0BBE4wTIAQg6JKNhP+lAkC7ijZrT0htqEmMCQx
+					DjAMBgNVBAoTBUluZXJhMRIwEAYDVQQDEwlQYXNjYWwgQ0GCEDtN3XlBC1KqROlkcui01LgwDQYJ
+					KoZIhvcNAQENBQADggEBABiKqkjFoutrxhXgAb+NWzBbgT9HxuUDm3MNanoDdhCHutZbv0bV46KW
+					pYU84tcmvhuTrReZYuwtrmJvOuFijd+z3KFHliLI4Bnr+cFq+SPOennqJDYaa1ZmcVa+qUH6iNHh
+					/yVq/6nqvBToYdnHMI0SDHbYZWyZeJ+NDRIzATCpol71HvUbJ2wfo3nPg8DXmW3nA3hMNxhMCTkC
+					3eBL/B2oHXr3ZTpjp450v1isDZlNP+69avuU8ycodYcgrPwHdfmfeirSP8ymEZyGs98XvjYiSJbQ
+					Q50nZLgkyOH1EPYrrMqEe0CB1aWAuBaK3M7AyXq6pFCjBtdIFXtrra64SxQ=
+				</ds:X509Certificate>
+			</ds:X509Data>
+		</ds:KeyInfo>
+	</ds:Signature>
+	<saml2:Subject>
+		<saml2:NameID
+			Format="urn:oasis:names:tc:SAML:2.0:nameid-format:X509SubjectName"
+			NameQualifier="Serial Number=1074b135296e3b04,C=se, O=apotekensservice, CN=pascalonline">pascalonline</saml2:NameID>
+		<saml2:SubjectConfirmation
+			Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+			<saml2:SubjectConfirmationData
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saml2:KeyInfoConfirmationDataType">
+				<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<ds:KeyName>Pascal Key</ds:KeyName>
+				</ds:KeyInfo>
+			</saml2:SubjectConfirmationData>
+		</saml2:SubjectConfirmation>
+	</saml2:Subject>
+	<saml2:Conditions NotBefore="2011-09-23T07:20:25.341Z"
+		NotOnOrAfter="2011-09-23T07:35:25.342Z" />
+	<saml2:AuthnStatement AuthnInstant="2011-09-23T07:25:25.298Z">
+		<saml2:AuthnContext>
+			<saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:SmartcardPKI
+			</saml2:AuthnContextClassRef>
+		</saml2:AuthnContext>
+	</saml2:AuthnStatement>
+	<saml2:AttributeStatement>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:DirectoryID"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">TSE6565656565-1003</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:OrganizationID"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">1234567890</saml2:AttributeValue>
+		</saml2:Attribute>
+	</saml2:AttributeStatement>
+</saml2:Assertion>
+<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+	ID="_7a868a1116aba0478b84aeaf637328f7" IssueInstant="2011-09-23T07:25:25.448Z"
+	Version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<saml2:Issuer>pascalonline</saml2:Issuer>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<ds:SignedInfo>
+			<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<ds:Reference URI="#_7a868a1116aba0478b84aeaf637328f7">
+				<ds:Transforms>
+					<ds:Transform
+						Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+						<ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+							PrefixList="xs" />
+					</ds:Transform>
+				</ds:Transforms>
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<ds:DigestValue>87JbJZZj84+mrmuNHZG7nBsb2J0=</ds:DigestValue>
+			</ds:Reference>
+		</ds:SignedInfo>
+		<ds:SignatureValue>KFYQsBX3TL8cjnK+FJ8aISN3U2RrTEdC7gIsAvgEiT2opFyADH89qRQXP/0Un9m5WvsH99PMOaKHM15R88luhnOg7JnZuBfVHkFG+hv1Bb7owk/S1yHTE/7Rp7uGGQGYgQT/liGDRzphBc16d8Kuyyps7wz3f4F33VbJQ1En5lY=
+		</ds:SignatureValue>
+		<ds:KeyInfo>
+			<ds:X509Data>
+				<ds:X509Certificate>MIICmzCCAYOgAwIBAgIQwPe6IqwQNKlKA7zNSdf+ejANBgkqhkiG9w0BAQ0FADAkMQ4wDAYDVQQK
+					EwVJbmVyYTESMBAGA1UEAxMJUGFzY2FsIENBMB4XDTExMDEyMTEzNTczNFoXDTM5MTIzMTIzNTk1
+					OVowGDEWMBQGA1UEAxMNUGFzY2FsIE9ubGluZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA
+					oLUMi3SzBgcbnB/xP4Mkvpa2Ag2Zxp29le8Ps8e7Zc+CrQdvd/UsQVO++8sAfMpLL8Pp+uj70WVE
+					KAzuFK1TyYf8EFfqnROrp1vZYNQvEBiHdiapa5u0Pja29fQvNIV68Eq2o/akReuIQfqq55MIkmn7
+					yrA6Uxn+foh+83xHIE0CAwEAAaNZMFcwVQYDVR0BBE4wTIAQg6JKNhP+lAkC7ijZrT0htqEmMCQx
+					DjAMBgNVBAoTBUluZXJhMRIwEAYDVQQDEwlQYXNjYWwgQ0GCEDtN3XlBC1KqROlkcui01LgwDQYJ
+					KoZIhvcNAQENBQADggEBABiKqkjFoutrxhXgAb+NWzBbgT9HxuUDm3MNanoDdhCHutZbv0bV46KW
+					pYU84tcmvhuTrReZYuwtrmJvOuFijd+z3KFHliLI4Bnr+cFq+SPOennqJDYaa1ZmcVa+qUH6iNHh
+					/yVq/6nqvBToYdnHMI0SDHbYZWyZeJ+NDRIzATCpol71HvUbJ2wfo3nPg8DXmW3nA3hMNxhMCTkC
+					3eBL/B2oHXr3ZTpjp450v1isDZlNP+69avuU8ycodYcgrPwHdfmfeirSP8ymEZyGs98XvjYiSJbQ
+					Q50nZLgkyOH1EPYrrMqEe0CB1aWAuBaK3M7AyXq6pFCjBtdIFXtrra64SxQ=
+				</ds:X509Certificate>
+			</ds:X509Data>
+		</ds:KeyInfo>
+	</ds:Signature>
+	<saml2:Conditions NotBefore="2011-09-23T07:20:25.341Z"
+		NotOnOrAfter="2011-09-23T07:34:25.342Z" />
+	<saml2:AttributeStatement>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:connectedAssertionId"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">_7a460ac7da7dcd0c5f2fbab6110266bf</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:assertionType"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">AuthorizationData</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:rollnamn"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">FORSKRIVARE</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:katalogId"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">TSE6565656565-1003</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:katalog"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">HSA</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:forskrivarkod"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">1111129</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:legitimationskod"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">1234567</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:yrkeskod"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">Läkare</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:befattningskod"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">123456</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:fornamn"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">Lars</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:efternamn"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">Läkare</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:arbetsplatskod"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">1234567890</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:arbetsplats"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">Sjukhuset</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:postadress"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">Vägen 1</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:postnummer"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">11111</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:postort"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">Staden</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:telefonnummer"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">08-1234567</saml2:AttributeValue>
+		</saml2:Attribute>
+	</saml2:AttributeStatement>
+</saml2:Assertion>
+<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+	ID="_f7f227fe7395f331a93ceacbe8966be7" IssueInstant="2011-09-23T07:25:25.458Z"
+	Version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<saml2:Issuer>pascalonline</saml2:Issuer>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<ds:SignedInfo>
+			<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<ds:Reference URI="#_f7f227fe7395f331a93ceacbe8966be7">
+				<ds:Transforms>
+					<ds:Transform
+						Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+						<ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+							PrefixList="xs" />
+					</ds:Transform>
+				</ds:Transforms>
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<ds:DigestValue>p+n3OyUiP9YJyOibTIq2jK7A7QM=</ds:DigestValue>
+			</ds:Reference>
+		</ds:SignedInfo>
+		<ds:SignatureValue>mOo+3t+evVF8+GInqUM0l1r8oB2McqXkn1IG22xSgYJfLd32y/iznc7aJ4RIoz+mP73Aa8P1rOK/OxWC8bbsIRdroLUJqQ4Ohq0cPgxd48cvYtQI6ScuVY0qBfxQi+iXAQoPNbWBQU1Bzyqv57QuPUNmintJhXf2i8+SHbqctRM=
+		</ds:SignatureValue>
+		<ds:KeyInfo>
+			<ds:X509Data>
+				<ds:X509Certificate>MIICmzCCAYOgAwIBAgIQwPe6IqwQNKlKA7zNSdf+ejANBgkqhkiG9w0BAQ0FADAkMQ4wDAYDVQQK
+					EwVJbmVyYTESMBAGA1UEAxMJUGFzY2FsIENBMB4XDTExMDEyMTEzNTczNFoXDTM5MTIzMTIzNTk1
+					OVowGDEWMBQGA1UEAxMNUGFzY2FsIE9ubGluZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA
+					oLUMi3SzBgcbnB/xP4Mkvpa2Ag2Zxp29le8Ps8e7Zc+CrQdvd/UsQVO++8sAfMpLL8Pp+uj70WVE
+					KAzuFK1TyYf8EFfqnROrp1vZYNQvEBiHdiapa5u0Pja29fQvNIV68Eq2o/akReuIQfqq55MIkmn7
+					yrA6Uxn+foh+83xHIE0CAwEAAaNZMFcwVQYDVR0BBE4wTIAQg6JKNhP+lAkC7ijZrT0htqEmMCQx
+					DjAMBgNVBAoTBUluZXJhMRIwEAYDVQQDEwlQYXNjYWwgQ0GCEDtN3XlBC1KqROlkcui01LgwDQYJ
+					KoZIhvcNAQENBQADggEBABiKqkjFoutrxhXgAb+NWzBbgT9HxuUDm3MNanoDdhCHutZbv0bV46KW
+					pYU84tcmvhuTrReZYuwtrmJvOuFijd+z3KFHliLI4Bnr+cFq+SPOennqJDYaa1ZmcVa+qUH6iNHh
+					/yVq/6nqvBToYdnHMI0SDHbYZWyZeJ+NDRIzATCpol71HvUbJ2wfo3nPg8DXmW3nA3hMNxhMCTkC
+					3eBL/B2oHXr3ZTpjp450v1isDZlNP+69avuU8ycodYcgrPwHdfmfeirSP8ymEZyGs98XvjYiSJbQ
+					Q50nZLgkyOH1EPYrrMqEe0CB1aWAuBaK3M7AyXq6pFCjBtdIFXtrra64SxQ=
+				</ds:X509Certificate>
+			</ds:X509Data>
+		</ds:KeyInfo>
+	</ds:Signature>
+	<saml2:Conditions NotBefore="2011-09-23T07:20:25.341Z"
+		NotOnOrAfter="2011-09-23T07:34:25.342Z" />
+	<saml2:AttributeStatement>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:connectedAssertionId"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">_7a460ac7da7dcd0c5f2fbab6110266bf</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:assertionType"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">InfoData</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:requestId"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">123456</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:systemnamn"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">Melior</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:systemversion"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">1.0</saml2:AttributeValue>
+		</saml2:Attribute>
+		<saml2:Attribute
+			Name="urn:apotekensservice:names:federation:attributeName:systemIp"
+			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:type="xs:string">192.0.0.1</saml2:AttributeValue>
+		</saml2:Attribute>
+	</saml2:AttributeStatement>
+</saml2:Assertion>

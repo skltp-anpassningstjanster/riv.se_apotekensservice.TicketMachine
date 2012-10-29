@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	   
+	   <import resource="classpath:/application-properties.xml"/>
+
+       <bean id="bootstrap" class="org.opensaml.DefaultBootstrap" init-method="bootstrap" lazy-init="false" />
+	 
+	   <bean id="responseMarshaller" class="org.opensaml.saml2.core.impl.ResponseMarshaller" />
+	   <bean id="assertionMarshaller" class="org.opensaml.saml2.core.impl.AssertionMarshaller" />
+	   <bean id="assertionUnmarshaller" class="org.opensaml.saml2.core.impl.AssertionUnmarshaller" />	   	     
+	   <bean id="secureRandomIdentifierGenerator" class="org.opensaml.common.impl.SecureRandomIdentifierGenerator" />
+	   <bean id="builderFactory" class="org.opensaml.Configuration" factory-method="getBuilderFactory" />
+	   <bean id="marshallerFactory" class="org.opensaml.Configuration" factory-method="getMarshallerFactory" />
+	   <bean id="secConfig" class="org.opensaml.Configuration" factory-method="getGlobalSecurityConfiguration" />
+       <bean id="keyInfoManager" factory-bean="secConfig" factory-method="getKeyInfoGeneratorManager" />
+       <bean id="keyInfoGeneratorManager" factory-bean="keyInfoManager" factory-method="getDefaultManager" />
+       
+       <bean id="apse_authentication" class="se.inera.pascal.ticket.core.ApseAuthenticationAttributes">
+       		<property name="directoryID" value="${directoryID} "/>
+       		<property name="organisationID" value="${organisationID}" />
+       </bean>
+       <bean id="apse_authorization" class="se.inera.pascal.ticket.core.ApseAuthorizationAttributes">
+			<property name="rollnamn" value="${rollnamn}"/>
+			<property name="katalogId" value="${katalogId}"/>
+			<property name="katalog" value="${katalog}"/>
+			<property name="forskrivarkod" value="${forskrivarkod}"/>
+			<property name="legitimationskod" value="${legitimationskod}"/>
+			<property name="yrkeskod" value="${yrkeskod}"/>
+			<property name="befattningskod" value="${befattningskod}"/>
+			<property name="fornamn" value="${fornamn}"/>
+			<property name="efternamn" value="${efternamn}"/>
+			<property name="arbetsplatskod" value="${arbetsplatskod}"/>
+			<property name="arbetsplats" value="${arbetsplats}"/>
+			<property name="postadress" value="${postadress}"/>
+			<property name="postnummer" value="${postnummer}"/>
+			<property name="postort" value="${postort}"/>
+			<property name="telefonnummer" value="${telefonnummer}"/>
+       </bean>
+       <bean id="apse_info" class="se.inera.pascal.ticket.core.ApseInfoAttributes">
+			<property name="systemNamn" value="${systemNamn}" />
+			<property name="systemVersion" value="${systemVersion}" />
+			<property name="systemIP" value="${systemIP}" />
+			<property name="requestID" value="${requestID}" />
+       </bean>
+
+       <bean id="defaultValues" class="se.inera.pascal.ticket.core.DefaultValues">
+       		<property name="ticketValidity" value="${ticketValidity}"/>
+       		<property name="apseAuthenticationAttributes" ref="apse_authentication"/>
+       		<property name="apseAuthorizationAttributes" ref="apse_authorization"/>
+       		<property name="apseInfoAttributes" ref="apse_info"/>
+       		<property name="certificateSubjectName" value="${certificateSubjectName}"/>
+       		<property name="certificateSubject" value="${certificateSubject}"/>
+       		<property name="certificateSerial" value="${certificateSerial}"/>
+       		<property name="buildingSubjectConfirmation" value="${buildingSubjectConfirmation}"/>
+       		<property name="removeInitialXMLString" value="${removeInitialXMLString}"/>
+       		<property name="xmlStringToRemove" value="${xmlStringToRemove}"/>
+       		<property name="validateBIF" value="${validateBIF}"/>       		
+       		<property name="validateLkTj" value="${validateLkTj}"/>
+       </bean>
+       
+       <bean id="saml2AssertionGenerator" class="se.inera.pascal.ticket.core.impl.SAML2AssertionGeneratorImpl" >
+	   		<property name="builderFactory" ref="builderFactory" />
+	   		<property name="secureRandomIdentifierGenerator" ref="secureRandomIdentifierGenerator" />
+	   		<property name="defaultValues" ref="defaultValues" />
+	   </bean>	  
+	   <bean id="saml2AssertionStringUtil" class="se.inera.pascal.ticket.core.impl.SAML2AssertionStringUtilImpl" >
+	   		<property name="responseMarshaller" ref="responseMarshaller" />
+	   		<property name="assertionMarshaller" ref="assertionMarshaller" />
+	   </bean>	   
+	       	   	      
+	   <bean id="saml2SigningCertificate" class="se.inera.pascal.ticket.core.SAML2SigningCertificate" >
+	   		<property name="keystorePath"             value="${keystorePath}" />
+	   		<property name="keystoreFilename"         value="${keystoreFilename}" />
+	   		<property name="keystorePassword" 		  value="${keystorePassword}" />
+	   		<property name="keystoreAlias"    		  value="${keystoreAlias}" />
+	   		<property name="keystoreAliasPassword"    value="${keystoreAliasPassword}" />
+	   		<property name="keystoreType"   		  value="${keystoreType}" />	   
+	   		<property name="credentialType"   		  value="${credentialType}" />	   
+	   </bean>	   
+	   <bean id="canonicalizationAlgorithm" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+   			<property name="staticField" value="org.opensaml.xml.signature.SignatureConstants.ALGO_ID_C14N_EXCL_OMIT_COMMENTS"/>
+ 		</bean> 		 			   	   	   
+	   <bean id="saml2XmlObjectSigner" class="se.inera.pascal.ticket.core.xml.signature.SAML2XMLObjectSigner" >
+	   		 <constructor-arg ref="saml2SigningCertificate" />
+	   		 <property name="builderFactory" ref="builderFactory" />
+	   		 <property name="marshallerFactory" ref="marshallerFactory" />
+	   		 <property name="keyInfoGeneratorManager" ref="keyInfoGeneratorManager" />
+	   		 <property name="includeKeyInfoInSignature" value="${includeKeyInfoInSignature}" />
+	   		 <property name="canonicalizationAlgorithm" ref="canonicalizationAlgorithm" />   		    		 
+	   </bean>	   
+	   <bean id="parser" class="org.opensaml.xml.parse.BasicParserPool" >
+	   		<property name="namespaceAware" value="${namespaceAware}" />
+	   </bean>	 
+	   <bean id="saml2AssertionTicketGenerator"	class="se.inera.pascal.ticket.core.impl.SAML2AssertionTicketGeneratorImpl" >
+	   		<property name="saml2AssertionGenerator"       ref="saml2AssertionGenerator" />
+	   		<property name="saml2XmlObjectSigner"          ref="saml2XmlObjectSigner" />
+	   		<property name="saml2AssertionStringUtil"  	   ref="saml2AssertionStringUtil" />	   		
+	   		<property name="defaultValues"  	   		   ref="defaultValues" />	   		
+	   </bean>   
+</beans>	   
