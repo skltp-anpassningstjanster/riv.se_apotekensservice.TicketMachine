@@ -49,16 +49,16 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 	public SAML2AssertionTicketGeneratorLauncher() throws Exception {
 		attributeSet = new SAML2AssertionAttributeSet();
 		logger.debug("Loading ApplicationContext");
-		// commandtool.xml innehŒller alla beans som springframework skall
+		// commandtool.xml innehÂŒller alla beans som springframework skall
 		// starta upp
 		try {
 			appCtx = new ClassPathXmlApplicationContext(new String[] { "commandtool.xml" });
 			logger.debug("Loading Ticket Generator");
 			atg = (SAML2AssertionTicketGenerator) appCtx.getBean("saml2AssertionTicketGenerator");
 			logger.debug("Loading Default Values");
-			// DefaultValues Šr en "container" fšr samtliga standard vŠrden som
-			// vi anvŠnder i applikationen
-			// vissa av dessa vŠrden bšr normalt Šndras av inkommande biljetter
+			// DefaultValues ÂŠr en "container" fÂšr samtliga standard vÂŠrden som
+			// vi anvÂŠnder i applikationen
+			// vissa av dessa vÂŠrden bÂšr normalt ÂŠndras av inkommande biljetter
 			defVal = (DefaultValues) appCtx.getBean("defaultValues");
 			parser = (BasicParserPool) appCtx.getBean("parser");
 			apseAuthorization = defVal.getApseAuthorizationAttributes();
@@ -105,14 +105,14 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 			}
 			List<SAML2Attribute> attribs = xp.parse();
 			// iterera igenom samtliga attribut som parsern hittat och koppla
-			// dem till rŠtt typ av ApSe-attribut (authentication,
+			// dem till rÂŠtt typ av ApSe-attribut (authentication,
 			// authorization, info)
 			for (SAML2Attribute att : attribs) {
 				String name = att.getName().toLowerCase();
 				String value = att.getValue();
-				// assertionID Šr den inkommande biljettens unika ID, vi
-				// ŒteranvŠnder det vŠrdet
-				// och sŠtter det som unikt id mot ApSe
+				// assertionID ÂŠr den inkommande biljettens unika ID, vi
+				// ÂŒteranvÂŠnder det vÂŠrdet
+				// och sÂŠtter det som unikt id mot ApSe
 				if (name.contains(("AssertionID").toLowerCase())) { // TODO:
 																	// remove
 																	// hard
@@ -144,12 +144,12 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 					} else if (name.contains(StringConstants.LKTJ_TICKET_PRODUCT)) {
 						apseInfo.setSystemNamn(value);
 						apseInfo.setSystemVersion(value);
-						// personnummer anvŠnds inte
+						// personnummer anvÂŠnds inte
 						// }else if
 						// (name.contains(StringConstants.LKTJ_TICKET_SSN)){
 					} else if (name.contains(StringConstants.LKTJ_TICKET_SYSTEMIP)) {
 						apseInfo.setSystemIP(value);
-						// SystemName/Identifier anvŠnds inte, Šr
+						// SystemName/Identifier anvÂŠnds inte, ÂŠr
 						// biljettserverns namn
 						// }else if
 						// (name.contains(StringConstants.LKTJ_TICKET_SYSTEMNAME)){
@@ -192,7 +192,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		configureAuthoAttributes(autho.getRollnamn(), autho.getKatalogId(), autho.getKatalog(),
 				autho.getForskrivarkod(), autho.getLegitimationskod(), autho.getYrkeskod(), autho.getBefattningskod(),
 				autho.getFornamn(), autho.getEfternamn(), autho.getArbetsplatskod(), autho.getArbetsplats(),
-				autho.getPostadress(), autho.getPostnummer(), autho.getPostort(), autho.getTelefonnummer());
+				autho.getPostadress(), autho.getPostnummer(), autho.getPostort(), autho.getTelefonnummer(), autho.getPersonnummer(), autho.getOrganisationsnummer());
 
 		configureAuthnAttributes(authn.getDirectoryID(), authn.getOrganisationID());
 
@@ -229,7 +229,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		return this.apseAuthentication;
 	}
 
-	// sŠtt default-vŠrden, om de inte innehŒller nŒgot.
+	// sÂŠtt default-vÂŠrden, om de inte innehÂŒller nÂŒgot.
 	public void setIncomingAuthorizationAttributes(ApseAuthorizationAttributes attribs) {
 		if (StringUtils.isNotEmpty(attribs.getArbetsplats())) {
 			apseAuthorization.setArbetsplats(attribs.getArbetsplats());
@@ -275,6 +275,13 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		}
 		if (StringUtils.isNotEmpty(attribs.getYrkeskod())) {
 			apseAuthorization.setYrkeskod(attribs.getYrkeskod());
+		}
+		if (StringUtils.isNotEmpty(attribs.getPersonnummer())) {
+			apseAuthorization.setPersonnummer(attribs.getPersonnummer());
+		}
+		
+		if (StringUtils.isNotEmpty(attribs.getPersonnummer())) {
+			apseAuthorization.setOrganisationsnummer(attribs.getOrganisationsnummer());
 		}
 	}
 
@@ -331,7 +338,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 	private void configureAuthoAttributes(String rollnamn, String katalogId, String katalog, String forskrivarkod,
 			String legitimationskod, String yrkeskod, String befattningskod, String fornamn, String efternamn,
 			String arbetsplatskod, String arbetsplats, String postadress, String postnummer, String postort,
-			String telefonnummer) {
+			String telefonnummer, String personnummer, String organisationsnummer) {
 		List<SAML2Attribute> authoAttributes = new ArrayList<SAML2Attribute>();
 		SAML2Attribute roll = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, rollnamn);
 		authoAttributes.add(roll);
@@ -370,6 +377,10 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		authoAttributes.add(port);
 		SAML2Attribute tnmr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_TELEPHONE, telefonnummer);
 		authoAttributes.add(tnmr);
+		SAML2Attribute pnr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
+		authoAttributes.add(pnr);
+		SAML2Attribute org = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID, organisationsnummer);
+		authoAttributes.add(org);
 
 		attributeSet.setAuthorizationAttributes(authoAttributes);
 	}

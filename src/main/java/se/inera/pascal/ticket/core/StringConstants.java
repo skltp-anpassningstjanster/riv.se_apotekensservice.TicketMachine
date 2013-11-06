@@ -37,6 +37,7 @@ public interface StringConstants {
 	public final static String ATTRIBUTE_AUTHORIZATION_POSTAREA = "postort";
 	public final static String ATTRIBUTE_AUTHORIZATION_TELEPHONE = "telefonnummer";
 	public final static String ATTRIBUTE_AUTHORIZATION_SSN = "personnummer";
+	public static final String ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID = "organisationsnummer";
 
 	public final static String ATTRIBUTE_INFO_DATA = "InfoData";
 	public final static String ATTRIBUTE_INFO_REQUESTID = "requestId";
@@ -52,8 +53,8 @@ public interface StringConstants {
 	public final static String LKTJ_TICKET_SYSTEMIP = "systemlocality";
 	public final static String LKTJ_TICKET_SYSTEMNAME = "systemidentifier";
 	
-	public final static String BIF_TICKET_PRESCRIBERCODE = "fšrskrivarkod";
-	public final static String BIF_TICKET_FIRSTNAME = "fšrnamn";
+	public final static String BIF_TICKET_PRESCRIBERCODE = "fÂšrskrivarkod";
+	public final static String BIF_TICKET_FIRSTNAME = "fÂšrnamn";
 	public final static String BIF_TICKET_LASTNAME = "efternamn";
 	public final static String BIF_TICKET_POSITIONCODE = "befattningskod";
 	

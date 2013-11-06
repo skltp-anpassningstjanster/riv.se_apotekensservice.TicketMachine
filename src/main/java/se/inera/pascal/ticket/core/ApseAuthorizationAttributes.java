@@ -16,6 +16,8 @@ public class ApseAuthorizationAttributes {
 	private String postnummer = "";
 	private String postort = "";
 	private String telefonnummer = "";
+	private String personnummer = "";
+	private String organisationsnummer = "";
 
 	public ApseAuthorizationAttributes() {
 	}
@@ -138,5 +140,21 @@ public class ApseAuthorizationAttributes {
 
 	public String getTelefonnummer() {
 		return telefonnummer;
+	}
+	
+	public String getPersonnummer() {
+		return personnummer;
+	}
+	
+	public void setPersonnummer(String personnummer) {
+		this.personnummer = personnummer;
+	}
+
+	public void setOrganisationsnummer(String organisationsnummer) {
+		this.organisationsnummer = organisationsnummer; 
+	}
+	
+	public String getOrganisationsnummer() {
+		return organisationsnummer;
 	}
 }

@@ -71,4 +71,37 @@ public class ArgosTicket {
 		}
 		return retval;
 	}
+
+	public String getTicket(String fornamn, String efternamn,
+			String personnummer, String rollnamn, String organisationsnummer,
+			String systemnamn, String systemversion) {
+		String retval = "";
+		if (launcher != null) {
+			ApseAuthorizationAttributes authoAttr = new ApseAuthorizationAttributes();
+			authoAttr.setEfternamn(efternamn);
+			authoAttr.setFornamn(fornamn);
+			authoAttr.setRollnamn(rollnamn);
+			authoAttr.setPersonnummer(personnummer);
+			authoAttr.setOrganisationsnummer(organisationsnummer);
+			
+			ApseAuthenticationAttributes authnAttr = new ApseAuthenticationAttributes();
+			authnAttr.setDirectoryID(personnummer);
+			authnAttr.setOrganisationID(organisationsnummer);
+
+			ApseInfoAttributes infoAttr = new ApseInfoAttributes();
+			infoAttr.setSystemNamn(systemnamn);
+			infoAttr.setSystemVersion(systemversion);
+
+			launcher.setIncomingAuthorizationAttributes(authoAttr);
+			launcher.setIncomingAuthenticationAttributes(authnAttr);
+			launcher.setIncomingInfoAttributes(infoAttr);
+
+			launcher.configureAttributes();
+
+			retval = launcher.getTicket(true);
+		} else {
+			retval = launcherErrorString;
+		}
+		return retval;
+	}
 }
