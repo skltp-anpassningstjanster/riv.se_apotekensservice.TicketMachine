@@ -42,7 +42,7 @@ public class ArgosTicketTest {
 		String systemversion = "1.0";
 		String systemIp = "192.168.1.1";
 
-		String ticket = new ArgosTicket().getTicket(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
+		String ticket = new ArgosTicket().getTicketForOrganization(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
 				befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
 				requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
 
@@ -75,7 +75,7 @@ public class ArgosTicketTest {
 		String systemversion = "1.0";
 		String systemIp = "192.0.0.1";
 
-		String ticket = new ArgosTicket().getTicket(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
+		String ticket = new ArgosTicket().getTicketForOrganization(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
 				befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
 				requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
 
@@ -91,10 +91,12 @@ public class ArgosTicketTest {
 		String rollnamn = "PRIVATPERSON";
 		String personnummer = "197109231234";
 		String organisationsnummer = "MVK_111111111";
+		String requestId = "12345676";
+		String systemIp = "192.168.1.1";
 		String systemnamn = "Mina vårdkontakter";
 		String systemversion = "1.0";
 
-		String ticket = new ArgosTicket().getTicket(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, systemnamn, systemversion) ;
+		String ticket = new ArgosTicket().getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
 
 		//Autentiseringsintyget
 		//directoryId

@@ -25,7 +25,7 @@ public class ArgosTicket {
 		}
 	}
 
-	public String getTicket(String forskrivarkod, String legitimationskod, String fornamn, String efternamn,
+	public String getTicketForOrganization(String forskrivarkod, String legitimationskod, String fornamn, String efternamn,
 			String Yrkesgrupp, String befattningskod, String arbetsplatskod, String arbetsplatsnamn, String postort,
 			String postadress, String postnummer, String telefonnummer, String requestId, String rollnamn,
 			String hsaID, String katalog, String organisationsnummer, String systemnamn, String systemversion,
@@ -72,9 +72,9 @@ public class ArgosTicket {
 		return retval;
 	}
 
-	public String getTicket(String fornamn, String efternamn,
+	public String getTicketForCitizen(String fornamn, String efternamn,
 			String personnummer, String rollnamn, String organisationsnummer,
-			String systemnamn, String systemversion) {
+			String requestId, String systemIp, String systemnamn, String systemversion) {
 		String retval = "";
 		if (launcher != null) {
 			ApseAuthorizationAttributes authoAttr = new ApseAuthorizationAttributes();
