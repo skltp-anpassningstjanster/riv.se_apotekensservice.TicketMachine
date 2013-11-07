@@ -23,13 +23,13 @@ public class ArgosTicketTest {
 		String forskrivarkod = "1111152";
 		String legitimationskod = "1111111";
 		String fornamn = "Lars";
-		String efternamn = "Lkare";
+		String efternamn = "LÂkare";
 		String yrkesgrupp = "FORSKRIVARE";
 		String befattningskod = "1111111";
 		String arbetsplatskod = "4000000000001";
 		String arbetsplatsnamn = "VC Test";
 		String postort = "Staden";
-		String postadress = "Vgen 1";
+		String postadress = "VÂgen 1";
 		String postnummer = "11111";
 		String telefonnummer = "0987654321";
 		String requestId = "12345676";
@@ -62,13 +62,13 @@ public class ArgosTicketTest {
 		String forskrivarkod = "1111129";
 		String legitimationskod = null;
 		String fornamn = "Lars";
-		String efternamn = "Lkare";
-		String yrkesgrupp = "Lkare";
+		String efternamn = "LÂkare";
+		String yrkesgrupp = "LÂkare";
 		String befattningskod = "123456";
 		String arbetsplatskod = "1234567890";
 		String arbetsplatsnamn = "Sjukhuset";
 		String postort = "Staden";
-		String postadress = "Vgen 1";
+		String postadress = "VÂgen 1";
 		String postnummer = "11111";
 		String telefonnummer = "08-1234567";
 		String requestId = "123456";
@@ -99,7 +99,7 @@ public class ArgosTicketTest {
 		String organisationsnummer = "MVK_111111111";
 		String requestId = "12345676";
 		String systemIp = "192.168.1.1";
-		String systemnamn = "Mina vårdkontakter";
+		String systemnamn = "Mina vÃ¥rdkontakter";
 		String systemversion = "1.0";
 
 		String ticket = new ArgosTicket().getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
@@ -119,7 +119,7 @@ public class ArgosTicketTest {
 				ticket, containsString(expectedOrganizationIdSamlAttribute));
 		
 		//Auktorisationsintyget
-		//assertionType måste innehålla värdet AuthorizationData
+		//assertionType mÃ¥ste innehÃ¥lla vÃ¤rdet AuthorizationData
 		String expectedAssertionTypeSamlAttribute = format(samlAttributeTemplate, "urn:apotekensservice:names:federation:attributeName:assertionType", "AuthorizationData");
 		assertThat("Ticket should contain urn for assertionType and the value AuthorizationData",
 				ticket, containsString(expectedAssertionTypeSamlAttribute));
@@ -136,7 +136,7 @@ public class ArgosTicketTest {
 		assertThat("Ticket should contain attribute efternamn and its attributevalue",
 				ticket, containsString(expectedEfternamnSamlAttribute));
 
-		//förnamn
+		//fÃ¶rnamn
 		String expectedFornamnSamlAttribute = format(samlAttributeTemplate,
 				"urn:apotekensservice:names:federation:attributeName:fornamn",
 				fornamn);
@@ -150,15 +150,16 @@ public class ArgosTicketTest {
 		assertThat("Ticket should contain attribute organisationsnummer and its attributevalue",
 				ticket, containsString(expectedOrganisationsnummerSamlAttribute));
 		
-		//rollnamn I ApSe säkerhetsheader står det att detta attribut ska heta roll och inte rollnamn
+		//roll ska förekomma, inte rollnamn se https://skl-tp.atlassian.net/browse/SKLTP-346
 		String expectedRollSamlAttribute = format(samlAttributeTemplate,
-				"urn:apotekensservice:names:federation:attributeName:rollnamn",
+				"urn:apotekensservice:names:federation:attributeName:roll",
 				rollnamn);
 		assertThat("Ticket should contain attribute roll and its attributevalue PRIVATPERSON",
 				ticket, containsString(expectedRollSamlAttribute));
 		
+		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:rollnamn")));
 		//Infodata
-		//Hur göra asserts på att rätt data kommer ut här. Detta överlappar ju med AuktorisationsIntyget i flera delar
+		//Hur gÃ¶ra asserts pÃ¥ att rÃ¤tt data kommer ut hÃ¤r. Detta Ã¶verlappar ju med AuktorisationsIntyget i flera delar
 		
 	}
 	private String getConnectedAssertionIDFromTicket(String ticket) {

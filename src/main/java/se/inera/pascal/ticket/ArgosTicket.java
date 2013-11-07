@@ -119,7 +119,14 @@ public class ArgosTicket {
 			ApseAuthorizationAttributes authoAttr = new ApseAuthorizationAttributes();
 			authoAttr.setEfternamn(efternamn);
 			authoAttr.setFornamn(fornamn);
-			authoAttr.setRollnamn(rollnamn);
+			
+			/*
+			 * Obs! Roll är det attribut i säkerhetsheadern som ska användas enligt dokumentet
+			 * Säkerhetsheader v1.0 från Apotekens service. Vi behåller dock det parallella spåret
+			 * med rollnamn för organisationsbiljetter för att befintlig kod i produktion ej ska drabbas.
+			 * Se https://skl-tp.atlassian.net/browse/SKLTP-346
+			 */
+			authoAttr.setRoll(rollnamn); 
 			authoAttr.setPersonnummer(personnummer);
 			authoAttr.setOrganisationsnummer(organisationsnummer);
 			

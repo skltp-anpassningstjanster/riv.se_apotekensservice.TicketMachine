@@ -192,7 +192,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		configureAuthoAttributes(autho.getRollnamn(), autho.getKatalogId(), autho.getKatalog(),
 				autho.getForskrivarkod(), autho.getLegitimationskod(), autho.getYrkeskod(), autho.getBefattningskod(),
 				autho.getFornamn(), autho.getEfternamn(), autho.getArbetsplatskod(), autho.getArbetsplats(),
-				autho.getPostadress(), autho.getPostnummer(), autho.getPostort(), autho.getTelefonnummer(), autho.getPersonnummer(), autho.getOrganisationsnummer());
+				autho.getPostadress(), autho.getPostnummer(), autho.getPostort(), autho.getTelefonnummer(), autho.getPersonnummer(), autho.getOrganisationsnummer(), autho.getRoll());
 
 		configureAuthnAttributes(authn.getDirectoryID(), authn.getOrganisationID());
 
@@ -280,8 +280,11 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 			apseAuthorization.setPersonnummer(attribs.getPersonnummer());
 		}
 		
-		if (StringUtils.isNotEmpty(attribs.getPersonnummer())) {
+		if (StringUtils.isNotEmpty(attribs.getOrganisationsnummer())) {
 			apseAuthorization.setOrganisationsnummer(attribs.getOrganisationsnummer());
+		}
+		if (StringUtils.isNotEmpty(attribs.getRoll())) {
+			apseAuthorization.setRoll(attribs.getRoll());
 		}
 	}
 
@@ -338,10 +341,13 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 	private void configureAuthoAttributes(String rollnamn, String katalogId, String katalog, String forskrivarkod,
 			String legitimationskod, String yrkeskod, String befattningskod, String fornamn, String efternamn,
 			String arbetsplatskod, String arbetsplats, String postadress, String postnummer, String postort,
-			String telefonnummer, String personnummer, String organisationsnummer) {
+			String telefonnummer, String personnummer, String organisationsnummer, String roll) {
 		List<SAML2Attribute> authoAttributes = new ArrayList<SAML2Attribute>();
-		SAML2Attribute roll = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, rollnamn);
-		authoAttributes.add(roll);
+		if(StringUtils.isNotEmpty(rollnamn)) {
+			SAML2Attribute rnamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE_NAME, rollnamn);
+			authoAttributes.add(rnamn);
+		}
+		
 		SAML2Attribute dirid = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_DIRECTORY_ID, katalogId);
 		authoAttributes.add(dirid);
 		SAML2Attribute dir = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_DIRECTORY, katalog);
@@ -384,6 +390,10 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		if (StringUtils.isNotEmpty(organisationsnummer)) {
 			SAML2Attribute org = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID, organisationsnummer);
 			authoAttributes.add(org);
+		}
+		if (StringUtils.isNotEmpty(roll)) {
+			SAML2Attribute r = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, roll);
+			authoAttributes.add(r);
 		}
 
 		attributeSet.setAuthorizationAttributes(authoAttributes);

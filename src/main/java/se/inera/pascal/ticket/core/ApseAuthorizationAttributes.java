@@ -18,6 +18,7 @@ public class ApseAuthorizationAttributes {
 	private String telefonnummer = "";
 	private String personnummer = "";
 	private String organisationsnummer = "";
+	private String roll = ""; //Se getter och setter för kommentar kring detta fälts relation med rollnamn.
 
 	public ApseAuthorizationAttributes() {
 	}
@@ -156,5 +157,29 @@ public class ApseAuthorizationAttributes {
 	
 	public String getOrganisationsnummer() {
 		return organisationsnummer;
+	}
+
+	/**
+	 * Obs! Roll är det attribut i säkerhetsheadern som ska användas enligt dokumentet
+	 * Säkerhetsheader v1.0 från Apotekens service. Vi behåller dock det parallella spåret
+	 * med rollnamn för organisationsbiljetter för att befintlig kod i produktion ej ska drabbas.
+	 * Se https://skl-tp.atlassian.net/browse/SKLTP-346
+	 * 
+	 * @param roll
+	 */
+	public void setRoll(String roll) {
+		this.roll = roll;
+	}
+	
+	/**
+	 * Obs! Roll är det attribut i säkerhetsheadern som ska användas enligt dokumentet
+	 * Säkerhetsheader v1.0 från Apotekens service. Vi behåller dock det parallella spåret
+	 * med rollnamn för organisationsbiljetter för att befintlig kod i produktion ej ska drabbas.
+	 * Se https://skl-tp.atlassian.net/browse/SKLTP-346
+	 * 
+	 * @return roll
+	 */
+	public String getRoll() {
+		return roll;
 	}
 }
