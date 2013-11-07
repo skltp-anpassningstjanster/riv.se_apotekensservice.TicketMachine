@@ -137,6 +137,8 @@ public class ArgosTicket {
 			ApseInfoAttributes infoAttr = new ApseInfoAttributes();
 			infoAttr.setSystemNamn(systemnamn);
 			infoAttr.setSystemVersion(systemversion);
+			infoAttr.setSystemIP(systemIp);
+			infoAttr.setRequestID(requestId);
 
 			launcher.setIncomingAuthorizationAttributes(authoAttr);
 			launcher.setIncomingAuthenticationAttributes(authnAttr);

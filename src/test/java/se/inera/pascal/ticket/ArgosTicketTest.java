@@ -99,9 +99,8 @@ public class ArgosTicketTest {
 		String organisationsnummer = "MVK_111111111";
 		String requestId = "12345676";
 		String systemIp = "192.168.1.1";
-		String systemnamn = "Mina vÃ¥rdkontakter";
+		String systemnamn = "Mina vardkontakter";
 		String systemversion = "1.0";
-
 		String ticket = new ArgosTicket().getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
 
 		//Autentiseringsintyget
@@ -158,8 +157,48 @@ public class ArgosTicketTest {
 				ticket, containsString(expectedRollSamlAttribute));
 		
 		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:rollnamn")));
-		//Infodata
-		//Hur gÃ¶ra asserts pÃ¥ att rÃ¤tt data kommer ut hÃ¤r. Detta Ã¶verlappar ju med AuktorisationsIntyget i flera delar
+		
+		//Informationsintyget
+		//systemIp
+		String expectedSystemIPSamlAttribute = format(samlAttributeTemplate,
+				"urn:apotekensservice:names:federation:attributeName:systemIp",
+				systemIp);
+		assertThat("Ticket should contain attribute systemIp and its attributevalue",
+				ticket, containsString(expectedSystemIPSamlAttribute));
+		
+		//systemnamn
+		String expectedSystemNamnSamlAttribute = format(samlAttributeTemplate,
+				"urn:apotekensservice:names:federation:attributeName:systemnamn",
+				systemnamn);
+		assertThat("Ticket should contain attribute systemnamn and its attributevalue",
+				ticket, containsString(expectedSystemNamnSamlAttribute));
+		
+		//systemversion
+		String expectedSystemVersionSamlAttribute = format(
+				samlAttributeTemplate,
+				"urn:apotekensservice:names:federation:attributeName:systemversion",
+				systemversion);
+		assertThat(
+				"Ticket should contain attribute systemversion and its attributevalue",
+				ticket, containsString(expectedSystemVersionSamlAttribute));
+		
+		//requestId
+		String expectedRequestIDSamlAttribute = format(
+				samlAttributeTemplate,
+				"urn:apotekensservice:names:federation:attributeName:requestId",
+				requestId);
+		assertThat(
+				"Ticket should contain attribute requestId and its attributevalue",
+				ticket, containsString(expectedRequestIDSamlAttribute));
+		
+		// assertionType mÃ¥ste innehÃ¥lla vÃ¤rdet AuthorizationData
+		String expectedAssertionTypeInfoDataSamlAttribute = format(
+				samlAttributeTemplate,
+				"urn:apotekensservice:names:federation:attributeName:assertionType",
+				"InfoData");
+		assertThat(
+				"Ticket should contain urn for assertionType and the value InfoData",
+				ticket, containsString(expectedAssertionTypeInfoDataSamlAttribute));
 		
 	}
 	private String getConnectedAssertionIDFromTicket(String ticket) {
