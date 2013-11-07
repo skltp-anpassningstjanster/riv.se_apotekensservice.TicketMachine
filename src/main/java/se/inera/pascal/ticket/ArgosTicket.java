@@ -25,6 +25,31 @@ public class ArgosTicket {
 		}
 	}
 
+	/**
+	 * Use this when creating a ticket for an organization.
+	 * 
+	 * @param forskrivarkod
+	 * @param legitimationskod
+	 * @param fornamn
+	 * @param efternamn
+	 * @param Yrkesgrupp
+	 * @param befattningskod
+	 * @param arbetsplatskod
+	 * @param arbetsplatsnamn
+	 * @param postort
+	 * @param postadress
+	 * @param postnummer
+	 * @param telefonnummer
+	 * @param requestId
+	 * @param rollnamn
+	 * @param hsaID
+	 * @param katalog
+	 * @param organisationsnummer
+	 * @param systemnamn
+	 * @param systemversion
+	 * @param systemIp
+	 * @return
+	 */
 	public String getTicketForOrganization(String forskrivarkod, String legitimationskod, String fornamn, String efternamn,
 			String Yrkesgrupp, String befattningskod, String arbetsplatskod, String arbetsplatsnamn, String postort,
 			String postadress, String postnummer, String telefonnummer, String requestId, String rollnamn,
@@ -72,6 +97,20 @@ public class ArgosTicket {
 		return retval;
 	}
 
+	/**
+	 * Use this when creating a ticket a citizen.
+	 * 
+	 * @param fornamn
+	 * @param efternamn
+	 * @param personnummer
+	 * @param rollnamn
+	 * @param organisationsnummer
+	 * @param requestId
+	 * @param systemIp
+	 * @param systemnamn
+	 * @param systemversion
+	 * @return
+	 */
 	public String getTicketForCitizen(String fornamn, String efternamn,
 			String personnummer, String rollnamn, String organisationsnummer,
 			String requestId, String systemIp, String systemnamn, String systemversion) {
