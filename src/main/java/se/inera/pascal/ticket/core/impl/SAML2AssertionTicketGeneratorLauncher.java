@@ -377,10 +377,14 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		authoAttributes.add(port);
 		SAML2Attribute tnmr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_TELEPHONE, telefonnummer);
 		authoAttributes.add(tnmr);
-		SAML2Attribute pnr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
-		authoAttributes.add(pnr);
-		SAML2Attribute org = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID, organisationsnummer);
-		authoAttributes.add(org);
+		if (StringUtils.isNotEmpty(personnummer)) {
+			SAML2Attribute pnr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
+			authoAttributes.add(pnr);
+		}
+		if (StringUtils.isNotEmpty(organisationsnummer)) {
+			SAML2Attribute org = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID, organisationsnummer);
+			authoAttributes.add(org);
+		}
 
 		attributeSet.setAuthorizationAttributes(authoAttributes);
 	}

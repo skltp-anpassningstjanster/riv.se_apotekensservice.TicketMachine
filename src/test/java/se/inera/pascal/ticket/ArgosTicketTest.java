@@ -46,8 +46,14 @@ public class ArgosTicketTest {
 				befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
 				requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
 
+		
 		assertThat(ticket, containsString("<saml2:Issuer>pascalonline</saml2:Issuer>"));
-
+		
+		//Check that attributes used in tickets for individuals doesn't show up here
+		//It is just a precaution as we don't want any conflicts with what's working in production today.
+		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:organisationsnummer")));
+		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:personnummer")));
+		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:roll\""))); //as we might match the attributeNamen rollnamn I had to add the little extra \"
 	}
 
 	@Test
@@ -80,7 +86,7 @@ public class ArgosTicketTest {
 				requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
 
 		assertNotNull(ticket);
-
+		
 	}
 	
 	@Test
