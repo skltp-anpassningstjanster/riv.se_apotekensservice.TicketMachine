@@ -103,6 +103,8 @@ public class ArgosTicketTest {
 		String systemversion = "1.0";
 		String ticket = new ArgosTicket().getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
 		
+		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:rollnamn")));
+		
 		//Autentiseringsintyget
 		//directoryId
 		String expectedDirectoryIDSamlAttribute = format(samlAttributeTemplate,
