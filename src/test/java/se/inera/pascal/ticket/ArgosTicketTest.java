@@ -102,7 +102,7 @@ public class ArgosTicketTest {
 		String systemnamn = "Mina vardkontakter";
 		String systemversion = "1.0";
 		String ticket = new ArgosTicket().getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
-
+		
 		//Autentiseringsintyget
 		//directoryId
 		String expectedDirectoryIDSamlAttribute = format(samlAttributeTemplate,
@@ -199,7 +199,6 @@ public class ArgosTicketTest {
 		assertThat(
 				"Ticket should contain urn for assertionType and the value InfoData",
 				ticket, containsString(expectedAssertionTypeInfoDataSamlAttribute));
-		
 	}
 	private String getConnectedAssertionIDFromTicket(String ticket) {
 		String connectedAssertionId = null;

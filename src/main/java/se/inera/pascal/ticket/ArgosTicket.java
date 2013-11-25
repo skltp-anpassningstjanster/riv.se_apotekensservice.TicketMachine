@@ -140,11 +140,11 @@ public class ArgosTicket {
 			infoAttr.setSystemIP(systemIp);
 			infoAttr.setRequestID(requestId);
 
-			launcher.setIncomingAuthorizationAttributes(authoAttr);
-			launcher.setIncomingAuthenticationAttributes(authnAttr);
-			launcher.setIncomingInfoAttributes(infoAttr);
+			launcher.setIncomingAuthorizationAttributesForCitizen(authoAttr);
+			launcher.setIncomingAuthenticationAttributesForCitizen(authnAttr);
+			launcher.setIncomingInfoAttributesForCitizen(infoAttr);
 
-			launcher.configureAttributes();
+			launcher.configureAttributesForCitizen();
 
 			retval = launcher.getTicket(true);
 		} else {

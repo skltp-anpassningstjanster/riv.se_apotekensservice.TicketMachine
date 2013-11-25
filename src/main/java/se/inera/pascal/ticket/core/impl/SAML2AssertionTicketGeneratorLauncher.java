@@ -186,6 +186,22 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 	public void configureAttributes(ApseAuthorizationAttributes autho) {
 		configureAttributes(autho, this.apseAuthentication, this.apseInfo);
 	}
+	
+	public void configureAttributesForCitizen() {
+		configureAttributesForCitizen(this.apseAuthorization, this.apseAuthentication, this.apseInfo);
+	}
+
+	private void configureAttributesForCitizen(
+			ApseAuthorizationAttributes autho,
+			ApseAuthenticationAttributes authn,
+			ApseInfoAttributes info) {
+		configureAuthoAttributesForCitizen(autho.getFornamn(), autho.getEfternamn(), autho.getPersonnummer(), autho.getOrganisationsnummer(), autho.getRoll());
+
+		configureAuthnAttributes(authn.getDirectoryID(), authn.getOrganisationID());
+
+		configureInfoAttributes(info.getRequestID(), info.getSystemNamn(), info.getSystemVersion(), info.getSystemIP());
+		
+	}
 
 	private void configureAttributes(ApseAuthorizationAttributes autho, ApseAuthenticationAttributes authn,
 			ApseInfoAttributes info) {
@@ -283,11 +299,28 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		if (StringUtils.isNotEmpty(attribs.getOrganisationsnummer())) {
 			apseAuthorization.setOrganisationsnummer(attribs.getOrganisationsnummer());
 		}
+	}
+
+	public void setIncomingAuthorizationAttributesForCitizen(
+			ApseAuthorizationAttributes attribs) {
+		if (StringUtils.isNotEmpty(attribs.getEfternamn())) {
+			apseAuthorization.setEfternamn(attribs.getEfternamn());
+		}
+		if (StringUtils.isNotEmpty(attribs.getFornamn())) {
+			apseAuthorization.setFornamn(attribs.getFornamn());
+		}
+		if (StringUtils.isNotEmpty(attribs.getPersonnummer())) {
+			apseAuthorization.setPersonnummer(attribs.getPersonnummer());
+		}
+		
+		if (StringUtils.isNotEmpty(attribs.getOrganisationsnummer())) {
+			apseAuthorization.setOrganisationsnummer(attribs.getOrganisationsnummer());
+		}
 		if (StringUtils.isNotEmpty(attribs.getRoll())) {
 			apseAuthorization.setRoll(attribs.getRoll());
 		}
 	}
-
+	
 	public void setIncomingAuthenticationAttributes(ApseAuthenticationAttributes attribs) {
 		if (StringUtils.isNotEmpty(attribs.getDirectoryID())) {
 			apseAuthentication.setDirectoryID(attribs.getDirectoryID());
@@ -297,6 +330,16 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		}
 	}
 
+	public void setIncomingAuthenticationAttributesForCitizen(
+			ApseAuthenticationAttributes attribs) {
+		if (StringUtils.isNotEmpty(attribs.getDirectoryID())) {
+			apseAuthentication.setDirectoryID(attribs.getDirectoryID());
+		}
+		if (StringUtils.isNotEmpty(attribs.getOrganisationID())) {
+			apseAuthentication.setOrganisationID(attribs.getOrganisationID());
+		}
+	}
+	
 	public void setIncomingInfoAttributes(ApseInfoAttributes attribs) {
 		if (StringUtils.isNotEmpty(attribs.getRequestID())) {
 			apseInfo.setRequestID(attribs.getRequestID());
@@ -312,6 +355,21 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		}
 	}
 
+	public void setIncomingInfoAttributesForCitizen(ApseInfoAttributes attribs) {
+		if (StringUtils.isNotEmpty(attribs.getRequestID())) {
+			apseInfo.setRequestID(attribs.getRequestID());
+		}
+		if (StringUtils.isNotEmpty(attribs.getSystemIP())) {
+			apseInfo.setSystemIP(attribs.getSystemIP());
+		}
+		if (StringUtils.isNotEmpty(attribs.getSystemNamn())) {
+			apseInfo.setSystemNamn(attribs.getSystemNamn());
+		}
+		if (StringUtils.isNotEmpty(attribs.getSystemVersion())) {
+			apseInfo.setSystemVersion(attribs.getSystemVersion());
+		}
+	}
+	
 	// konfigurera ApSe-attributen och spara i attribut-settet
 	private void configureAuthnAttributes(String dirid, String orgid) {
 		List<SAML2Attribute> authnAttributes = new ArrayList<SAML2Attribute>();
@@ -383,6 +441,37 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		authoAttributes.add(port);
 		SAML2Attribute tnmr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_TELEPHONE, telefonnummer);
 		authoAttributes.add(tnmr);
+		if (StringUtils.isNotEmpty(personnummer)) {
+			SAML2Attribute pnr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
+			authoAttributes.add(pnr);
+		}
+		if (StringUtils.isNotEmpty(organisationsnummer)) {
+			SAML2Attribute org = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID, organisationsnummer);
+			authoAttributes.add(org);
+		}
+		if (StringUtils.isNotEmpty(roll)) {
+			SAML2Attribute r = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, roll);
+			authoAttributes.add(r);
+		}
+
+		attributeSet.setAuthorizationAttributes(authoAttributes);
+	}
+	
+	private void configureAuthoAttributesForCitizen(String fornamn,
+			String efternamn, String personnummer, String organisationsnummer,
+			String roll) {
+		List<SAML2Attribute> authoAttributes = new ArrayList<SAML2Attribute>();
+		
+		if (StringUtils.isNotEmpty(fornamn)) {
+			SAML2Attribute fnamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_GIVENNAME, fornamn);
+			authoAttributes.add(fnamn);
+		}
+		
+		if (StringUtils.isNotEmpty(efternamn)) {
+			SAML2Attribute enamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_FAMILYNAME, efternamn);
+			authoAttributes.add(enamn);
+		}
+		
 		if (StringUtils.isNotEmpty(personnummer)) {
 			SAML2Attribute pnr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
 			authoAttributes.add(pnr);
