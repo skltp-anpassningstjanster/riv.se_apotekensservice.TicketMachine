@@ -208,7 +208,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		configureAuthoAttributes(autho.getRollnamn(), autho.getKatalogId(), autho.getKatalog(),
 				autho.getForskrivarkod(), autho.getLegitimationskod(), autho.getYrkeskod(), autho.getBefattningskod(),
 				autho.getFornamn(), autho.getEfternamn(), autho.getArbetsplatskod(), autho.getArbetsplats(),
-				autho.getPostadress(), autho.getPostnummer(), autho.getPostort(), autho.getTelefonnummer(), autho.getPersonnummer(), autho.getOrganisationsnummer(), autho.getRoll());
+				autho.getPostadress(), autho.getPostnummer(), autho.getPostort(), autho.getTelefonnummer());
 
 		configureAuthnAttributes(authn.getDirectoryID(), authn.getOrganisationID());
 
@@ -291,13 +291,6 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		}
 		if (StringUtils.isNotEmpty(attribs.getYrkeskod())) {
 			apseAuthorization.setYrkeskod(attribs.getYrkeskod());
-		}
-		if (StringUtils.isNotEmpty(attribs.getPersonnummer())) {
-			apseAuthorization.setPersonnummer(attribs.getPersonnummer());
-		}
-		
-		if (StringUtils.isNotEmpty(attribs.getOrganisationsnummer())) {
-			apseAuthorization.setOrganisationsnummer(attribs.getOrganisationsnummer());
 		}
 	}
 
@@ -399,7 +392,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 	private void configureAuthoAttributes(String rollnamn, String katalogId, String katalog, String forskrivarkod,
 			String legitimationskod, String yrkeskod, String befattningskod, String fornamn, String efternamn,
 			String arbetsplatskod, String arbetsplats, String postadress, String postnummer, String postort,
-			String telefonnummer, String personnummer, String organisationsnummer, String roll) {
+			String telefonnummer) {
 		List<SAML2Attribute> authoAttributes = new ArrayList<SAML2Attribute>();
 		if(StringUtils.isNotEmpty(rollnamn)) {
 			SAML2Attribute rnamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE_NAME, rollnamn);
@@ -441,18 +434,6 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		authoAttributes.add(port);
 		SAML2Attribute tnmr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_TELEPHONE, telefonnummer);
 		authoAttributes.add(tnmr);
-		if (StringUtils.isNotEmpty(personnummer)) {
-			SAML2Attribute pnr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
-			authoAttributes.add(pnr);
-		}
-		if (StringUtils.isNotEmpty(organisationsnummer)) {
-			SAML2Attribute org = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID, organisationsnummer);
-			authoAttributes.add(org);
-		}
-		if (StringUtils.isNotEmpty(roll)) {
-			SAML2Attribute r = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, roll);
-			authoAttributes.add(r);
-		}
 
 		attributeSet.setAuthorizationAttributes(authoAttributes);
 	}

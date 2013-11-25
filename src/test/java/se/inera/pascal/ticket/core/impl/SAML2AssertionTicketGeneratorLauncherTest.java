@@ -30,8 +30,6 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 		expected.setRollnamn("EN ROLL");
 		expected.setTelefonnummer("08 1234567890");
 		expected.setYrkeskod("YK");
-		expected.setPersonnummer("197109231234");
-		expected.setOrganisationsnummer("MVK-111111111");
 		launcher.setIncomingAuthorizationAttributes(expected);
 		launcher.configureAttributes();
 		ApseAuthorizationAttributes actual = launcher.getApseAuthorizationAttributes();
@@ -52,11 +50,9 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 		assertEquals(expected.getRollnamn(), actual.getRollnamn());
 		assertEquals(expected.getTelefonnummer(), actual.getTelefonnummer());
 		assertEquals(expected.getYrkeskod(), actual.getYrkeskod());
-		assertEquals(expected.getPersonnummer(), actual.getPersonnummer());
-		assertEquals(expected.getOrganisationsnummer(), actual.getOrganisationsnummer());
 
 	}
-
+	
 	@Test
 	public void defaultValuesShouldBeKeptWhenValuesAreMissing() throws Exception {
 
