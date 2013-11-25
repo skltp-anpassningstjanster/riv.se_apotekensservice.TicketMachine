@@ -5,7 +5,7 @@
 	<artifactId>TicketMachine</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>1.1.1</version>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -17,9 +17,9 @@
 
 	<scm>
 	
-        <connection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</connection>
-        <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</developerConnection>
-        <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</url>
+        <connection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/tags/TicketMachine-1.1.1</connection>
+        <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/tags/TicketMachine-1.1.1</developerConnection>
+        <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/tags/TicketMachine-1.1.1</url>
     </scm>
     
 	<dependencies>
