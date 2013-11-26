@@ -91,6 +91,7 @@ public class ArgosTicket {
 			launcher.configureAttributes();
 
 			retval = launcher.getTicket(true);
+			logger.debug(retval);
 		} else {
 			retval = launcherErrorString;
 		}
@@ -147,6 +148,7 @@ public class ArgosTicket {
 			launcher.configureAttributesForCitizen();
 
 			retval = launcher.getTicket(true);
+			logger.debug(retval);
 		} else {
 			retval = launcherErrorString;
 		}
