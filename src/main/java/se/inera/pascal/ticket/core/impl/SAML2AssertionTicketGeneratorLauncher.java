@@ -410,29 +410,52 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 			authoAttributes.add(fkod);
 		}
 
-		SAML2Attribute lkod = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_LEGITIMATIONCODE,
+		SAML2Attribute lkod = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_LEGITIMATIONCODE,
 				legitimationskod);
 		authoAttributes.add(lkod);
-		SAML2Attribute ykod = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_WORKCODE, yrkeskod);
+
+		SAML2Attribute ykod = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_WORKCODE, yrkeskod);
 		authoAttributes.add(ykod);
-		SAML2Attribute bkod = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_POSITIONCODE, befattningskod);
+
+		SAML2Attribute bkod = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_POSITIONCODE,
+				befattningskod);
 		authoAttributes.add(bkod);
-		SAML2Attribute fnamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_GIVENNAME, fornamn);
+
+		SAML2Attribute fnamn = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_GIVENNAME, fornamn);
 		authoAttributes.add(fnamn);
-		SAML2Attribute enamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_FAMILYNAME, efternamn);
+
+		SAML2Attribute enamn = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_FAMILYNAME, efternamn);
 		authoAttributes.add(enamn);
-		SAML2Attribute arbplatskod = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_WORKPLACECODE,
+
+		SAML2Attribute arbplatskod = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_WORKPLACECODE,
 				arbetsplatskod);
 		authoAttributes.add(arbplatskod);
-		SAML2Attribute arbplats = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_WORKPLACE, arbetsplats);
+
+		SAML2Attribute arbplats = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_WORKPLACE, arbetsplats);
 		authoAttributes.add(arbplats);
-		SAML2Attribute padr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ADDRESS, postadress);
+
+		SAML2Attribute padr = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_ADDRESS, postadress);
 		authoAttributes.add(padr);
-		SAML2Attribute pnmr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ZIPCODE, postnummer);
+
+		SAML2Attribute pnmr = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_ZIPCODE, postnummer);
 		authoAttributes.add(pnmr);
-		SAML2Attribute port = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_POSTAREA, postort);
+
+		SAML2Attribute port = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_POSTAREA, postort);
 		authoAttributes.add(port);
-		SAML2Attribute tnmr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_TELEPHONE, telefonnummer);
+
+		SAML2Attribute tnmr = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_TELEPHONE,
+				telefonnummer);
 		authoAttributes.add(tnmr);
 
 		attributeSet.setAuthorizationAttributes(authoAttributes);
@@ -442,29 +465,25 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 			String efternamn, String personnummer, String organisationsnummer,
 			String roll) {
 		List<SAML2Attribute> authoAttributes = new ArrayList<SAML2Attribute>();
-		
-		if (StringUtils.isNotEmpty(fornamn)) {
-			SAML2Attribute fnamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_GIVENNAME, fornamn);
-			authoAttributes.add(fnamn);
-		}
-		
-		if (StringUtils.isNotEmpty(efternamn)) {
-			SAML2Attribute enamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_FAMILYNAME, efternamn);
-			authoAttributes.add(enamn);
-		}
-		
-		if (StringUtils.isNotEmpty(personnummer)) {
-			SAML2Attribute pnr = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
-			authoAttributes.add(pnr);
-		}
-		if (StringUtils.isNotEmpty(organisationsnummer)) {
-			SAML2Attribute org = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID, organisationsnummer);
-			authoAttributes.add(org);
-		}
-		if (StringUtils.isNotEmpty(roll)) {
-			SAML2Attribute r = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, roll);
-			authoAttributes.add(r);
-		}
+
+		SAML2Attribute fnamn = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_GIVENNAME, fornamn);
+		authoAttributes.add(fnamn);
+
+		SAML2Attribute enamn = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_FAMILYNAME, efternamn);
+		authoAttributes.add(enamn);
+
+		SAML2Attribute pnr = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_SSN, personnummer);
+		authoAttributes.add(pnr);
+		SAML2Attribute org = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_ORGANIZATION_ID,
+				organisationsnummer);
+		authoAttributes.add(org);
+		SAML2Attribute r = new SAML2Attribute(
+				StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, roll);
+		authoAttributes.add(r);
 
 		attributeSet.setAuthorizationAttributes(authoAttributes);
 	}
