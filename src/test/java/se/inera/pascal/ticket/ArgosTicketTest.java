@@ -52,9 +52,7 @@ public class ArgosTicketTest {
 		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:personnummer")));
 		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:roll\""))); //as we might match the attributeNamen rollnamn I had to add the little extra \"		
 	}
-	
 
-	@Ignore //This is not a proper test, just a driver for validating tickets
 	@Test
 	public void personel_ticket_used_in_a_static_way() {
 
@@ -84,19 +82,31 @@ public class ArgosTicketTest {
 		String ticket = argosTicket.getTicketForOrganization(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
 				befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
 				requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
-
-		assertThat(ticket, containsString("<saml2:Issuer>pascalonline</saml2:Issuer>"));
-		
-		//Check that attributes used in tickets for individuals doesn't show up here
-		//It is just a precaution as we don't want any conflicts with what's working in production today.
-		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:organisationsnummer")));
-		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:personnummer")));
-		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:roll\""))); //as we might match the attributeNamen rollnamn I had to add the little extra \"
 		
 		ticket = argosTicket.getTicketForOrganization(null, null, null, null, null, null, null,
 				null, null, null, null, null, null, null, null, null, null, null, null, null);
 		
-		System.out.println(ticket);
+		assertThat(ticket, not(containsString(forskrivarkod)));
+		assertThat(ticket, not(containsString(legitimationskod)));
+		assertThat(ticket, not(containsString(fornamn)));
+		assertThat(ticket, not(containsString(efternamn)));
+		assertThat(ticket, not(containsString(yrkesgrupp)));
+		assertThat(ticket, not(containsString(befattningskod)));
+		assertThat(ticket, not(containsString(arbetsplatskod)));
+		assertThat(ticket, not(containsString(arbetsplatsnamn)));
+		assertThat(ticket, not(containsString(postort)));
+		assertThat(ticket, not(containsString(postadress)));
+		assertThat(ticket, not(containsString(postnummer)));
+		assertThat(ticket, not(containsString(telefonnummer)));
+		assertThat(ticket, not(containsString(requestId)));
+		assertThat(ticket, not(containsString(rollnamn)));
+		assertThat(ticket, not(containsString(hsaID)));
+		assertThat(ticket, not(containsString(">" + katalog + "<")));
+		assertThat(ticket, not(containsString(organisationsnummer)));
+		assertThat(ticket, not(containsString(">" + systemnamn + "<")));
+		assertThat(ticket, not(containsString(systemversion)));
+		assertThat(ticket, not(containsString(systemIp)));
+		
 	}
 	
 	@Test
@@ -153,7 +163,6 @@ public class ArgosTicketTest {
 				systemversion, ticket);
 	}
 	
-	@Ignore //This is not a proper test, just a driver for validating tickets
 	@Test
 	public void a_ticket_for_usage_in_individual_based_services_used_in_a_static_context_does_not_cache_values() {
 		
@@ -172,14 +181,16 @@ public class ArgosTicketTest {
 		String systemversion = "1.0";
 		String ticket = argosTicket.getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
 		
-		
-		assertsForCitizenTicket(fornamn, efternamn, rollnamn, personnummer,
-				organisationsnummer, requestId, systemIp, systemnamn,
-				systemversion, ticket);
-		
 		ticket = argosTicket.getTicketForCitizen(null, null, null, null, null, null, null, null, null);
-		
-//		System.out.println(ticket);
+
+		assertThat(ticket, not(containsString(fornamn)));
+		assertThat(ticket, not(containsString(efternamn)));
+		assertThat(ticket, not(containsString(personnummer)));
+		assertThat(ticket, not(containsString(organisationsnummer)));
+		assertThat(ticket, not(containsString(rollnamn)));
+		assertThat(ticket, not(containsString(requestId)));
+		assertThat(ticket, not(containsString(systemversion)));
+		assertThat(ticket, not(containsString(systemIp)));
 	}
 
 	private void assertsForCitizenTicket(String fornamn, String efternamn,
