@@ -35,14 +35,14 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 
 	private static final Logger logger = LoggerFactory.getLogger(SAML2AssertionTicketGeneratorLauncher.class);
 
-	private ApplicationContext appCtx = null;
+	private static ApplicationContext appCtx = null;
 	private SAML2AssertionTicketGenerator atg = null;
-	private DefaultValues defVal = null;
+	private static DefaultValues defVal = null;
 	private SAML2AssertionAttributeSet attributeSet;
 	private BasicParserPool parser;
-	private ApseAuthorizationAttributes apseAuthorization;
-	private ApseAuthenticationAttributes apseAuthentication;
-	private ApseInfoAttributes apseInfo;
+	private ApseAuthorizationAttributes apseAuthorization = new ApseAuthorizationAttributes();
+	private ApseAuthenticationAttributes apseAuthentication = new ApseAuthenticationAttributes();
+	private ApseInfoAttributes apseInfo = new ApseInfoAttributes();
 	private String errorString = "";
 
 	// starta applikationen och konfigurera alla beans
@@ -52,18 +52,12 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		// commandtool.xml innehller alla beans som springframework skall
 		// starta upp
 		try {
-			appCtx = new ClassPathXmlApplicationContext(new String[] { "commandtool.xml" });
+			if(appCtx == null) {
+				appCtx = new ClassPathXmlApplicationContext(new String[] { "commandtool.xml" });				
+			}
 			logger.debug("Loading Ticket Generator");
 			atg = (SAML2AssertionTicketGenerator) appCtx.getBean("saml2AssertionTicketGenerator");
 			logger.debug("Loading Default Values");
-			// DefaultValues r en "container" fr samtliga standard vrden som
-			// vi anvnder i applikationen
-			// vissa av dessa vrden br normalt ndras av inkommande biljetter
-			defVal = (DefaultValues) appCtx.getBean("defaultValues");
-			parser = (BasicParserPool) appCtx.getBean("parser");
-			apseAuthorization = defVal.getApseAuthorizationAttributes();
-			apseAuthentication = defVal.getApseAuthenticationAttributes();
-			apseInfo = defVal.getApseInfoAttributes();
 		} catch (Exception e) {
 			errorString = "Failed initialize launcher application!";
 			logger.error(errorString, e);
@@ -72,7 +66,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 	}
 
 	public void analyzeXML(String xml, boolean isBIF, boolean isFile) throws Exception {
-		// isFile skall bara vara true i utveckling/test
+//		 isFile skall bara vara true i utveckling/test
 		try {
 			XMLObject xObj = null;
 			XMLReader xRead = new XMLReader(parser);
@@ -226,10 +220,10 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 			configureAttributes();
 		}
 		message = getMessageAsString(atg, attributeSet, getSecurityOnly);
-		if (defVal.getRemoveInitialXMLString().equalsIgnoreCase("true")
-				|| defVal.getRemoveInitialXMLString().equalsIgnoreCase("yes")) {
-			message = message.replace(defVal.getXmlStringToRemove(), "");
-		}
+		//Since we don't import default values at all we need to do this manually
+		//otherwise we would have done something like
+		//message = message.replace(defVal.getXmlStringToRemove(), "");
+		message = message.replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", "");
 		return message;
 	}
 
