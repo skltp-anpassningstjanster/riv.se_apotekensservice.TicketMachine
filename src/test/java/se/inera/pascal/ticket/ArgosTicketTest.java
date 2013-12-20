@@ -104,7 +104,7 @@ public class ArgosTicketTest {
 		assertThat(ticket, not(containsString(">" + katalog + "<")));
 		assertThat(ticket, not(containsString(organisationsnummer)));
 		assertThat(ticket, not(containsString(">" + systemnamn + "<")));
-		assertThat(ticket, not(containsString(systemversion)));
+		assertThat(ticket, not(containsString(">" + systemversion + "<")));
 		assertThat(ticket, not(containsString(systemIp)));
 		
 	}
