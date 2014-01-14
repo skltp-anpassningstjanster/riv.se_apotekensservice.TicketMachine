@@ -84,20 +84,20 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 		ApseAuthorizationAttributes actual = launcher.getApseAuthorizationAttributes();
 
 		assertNotNull(actual);
-		assertEquals("arbetsplats", actual.getArbetsplats());
-		assertEquals("arbetsplatskod", actual.getArbetsplatskod());
+		assertEquals("", actual.getArbetsplats());
+		assertEquals("", actual.getArbetsplatskod());
 		assertEquals("", actual.getBefattningskod());
-		assertEquals("efternamn", actual.getEfternamn());
-		assertEquals("fornamn", actual.getFornamn());
+		assertEquals("", actual.getEfternamn());
+		assertEquals("", actual.getFornamn());
 		assertEquals("", actual.getForskrivarkod());
-		assertEquals("123", actual.getKatalog());
-		assertEquals("katalogId", actual.getKatalogId());
+		assertEquals("", actual.getKatalog());
+		assertEquals("", actual.getKatalogId());
 		assertEquals("", actual.getLegitimationskod());
-		assertEquals("postadress", actual.getPostadress());
-		assertEquals("12345", actual.getPostnummer());
-		assertEquals("postort", actual.getPostort());
+		assertEquals("", actual.getPostadress());
+		assertEquals("", actual.getPostnummer());
+		assertEquals("", actual.getPostort());
 		assertEquals("", actual.getRollnamn());
-		assertEquals("telefonnummer", actual.getTelefonnummer());
+		assertEquals("", actual.getTelefonnummer());
 		assertEquals("", actual.getYrkeskod());
 		assertEquals("", actual.getPersonnummer());
 	}

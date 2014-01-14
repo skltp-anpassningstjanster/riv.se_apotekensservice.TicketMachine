@@ -12,19 +12,6 @@ public class ArgosTicket {
 
 	private static Logger logger = LoggerFactory.getLogger(ArgosTicket.class);
 
-	private SAML2AssertionTicketGeneratorLauncher launcher = null;
-	private String launcherErrorString = "";
-
-	public ArgosTicket() {
-		try {
-			launcher = new SAML2AssertionTicketGeneratorLauncher();
-		} catch (Exception e) {
-			launcher = null;
-			launcherErrorString = e.getMessage();
-			logger.error(launcherErrorString);
-		}
-	}
-
 	/**
 	 * Use this when creating a ticket for an organization.
 	 * 
@@ -56,6 +43,15 @@ public class ArgosTicket {
 			String hsaID, String katalog, String organisationsnummer, String systemnamn, String systemversion,
 			String systemIp) {
 		String retval = "";
+		SAML2AssertionTicketGeneratorLauncher launcher;
+		String launcherErrorString = "";
+		try {
+			launcher = new SAML2AssertionTicketGeneratorLauncher();
+		} catch (Exception e) {
+			launcher = null;
+			launcherErrorString = e.getMessage();
+			logger.error(launcherErrorString);
+		}
 		if (launcher != null) {
 			ApseAuthorizationAttributes authoAttr = new ApseAuthorizationAttributes();
 			authoAttr.setArbetsplats(arbetsplatsnamn);
@@ -91,6 +87,7 @@ public class ArgosTicket {
 			launcher.configureAttributes();
 
 			retval = launcher.getTicket(true);
+			logger.debug(retval);
 		} else {
 			retval = launcherErrorString;
 		}
@@ -115,6 +112,15 @@ public class ArgosTicket {
 			String personnummer, String rollnamn, String organisationsnummer,
 			String requestId, String systemIp, String systemnamn, String systemversion) {
 		String retval = "";
+		SAML2AssertionTicketGeneratorLauncher launcher;
+		String launcherErrorString = "";
+		try {
+			launcher = new SAML2AssertionTicketGeneratorLauncher();
+		} catch (Exception e) {
+			launcher = null;
+			launcherErrorString = e.getMessage();
+			logger.error(launcherErrorString);
+		}
 		if (launcher != null) {
 			ApseAuthorizationAttributes authoAttr = new ApseAuthorizationAttributes();
 			authoAttr.setEfternamn(efternamn);
@@ -147,6 +153,7 @@ public class ArgosTicket {
 			launcher.configureAttributesForCitizen();
 
 			retval = launcher.getTicket(true);
+			logger.debug(retval);
 		} else {
 			retval = launcherErrorString;
 		}

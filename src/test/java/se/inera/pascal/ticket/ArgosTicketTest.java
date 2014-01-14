@@ -1,6 +1,7 @@
 package se.inera.pascal.ticket;
 
 import static java.lang.String.format;
+import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
@@ -8,10 +9,7 @@ import static org.junit.matchers.JUnitMatchers.containsString;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.hamcrest.core.IsNot.*;
-import static org.hamcrest.core.IsAnything.*;
-
-import org.hamcrest.core.IsNot;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ArgosTicketTest {
@@ -46,16 +44,71 @@ public class ArgosTicketTest {
 				befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
 				requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
 
-		
 		assertThat(ticket, containsString("<saml2:Issuer>pascalonline</saml2:Issuer>"));
 		
 		//Check that attributes used in tickets for individuals doesn't show up here
 		//It is just a precaution as we don't want any conflicts with what's working in production today.
 		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:organisationsnummer")));
 		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:personnummer")));
-		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:roll\""))); //as we might match the attributeNamen rollnamn I had to add the little extra \"
+		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:roll\""))); //as we might match the attributeNamen rollnamn I had to add the little extra \"		
 	}
 
+	@Test
+	public void personel_ticket_used_in_a_static_way() {
+
+		final ArgosTicket argosTicket = new ArgosTicket();
+		String forskrivarkod = "1111152";
+		String legitimationskod = "1111111";
+		String fornamn = "Lars";
+		String efternamn = "LÂkare";
+		String yrkesgrupp = "FORSKRIVARE";
+		String befattningskod = "1111111";
+		String arbetsplatskod = "4000000000001";
+		String arbetsplatsnamn = "VC Test";
+		String postort = "Staden";
+		String postadress = "VÂgen 1";
+		String postnummer = "11111";
+		String telefonnummer = "0987654321";
+		String requestId = "12345676";
+		String rollnamn = "LK";
+		// String directoryID = "SE1111111111-1003";
+		String hsaID = "SE1111111111-1003";
+		String katalog = "HSA";
+		String organisationsnummer = "111111111";
+		String systemnamn = "Pascal";
+		String systemversion = "1.0";
+		String systemIp = "192.168.1.1";
+
+		String ticket = argosTicket.getTicketForOrganization(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
+				befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
+				requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
+		
+		ticket = argosTicket.getTicketForOrganization(null, null, null, null, null, null, null,
+				null, null, null, null, null, null, null, null, null, null, null, null, null);
+		
+		assertThat(ticket, not(containsString(forskrivarkod)));
+		assertThat(ticket, not(containsString(legitimationskod)));
+		assertThat(ticket, not(containsString(fornamn)));
+		assertThat(ticket, not(containsString(efternamn)));
+		assertThat(ticket, not(containsString(yrkesgrupp)));
+		assertThat(ticket, not(containsString(befattningskod)));
+		assertThat(ticket, not(containsString(arbetsplatskod)));
+		assertThat(ticket, not(containsString(arbetsplatsnamn)));
+		assertThat(ticket, not(containsString(postort)));
+		assertThat(ticket, not(containsString(postadress)));
+		assertThat(ticket, not(containsString(postnummer)));
+		assertThat(ticket, not(containsString(telefonnummer)));
+		assertThat(ticket, not(containsString(requestId)));
+		assertThat(ticket, not(containsString(">" + rollnamn + "<")));
+		assertThat(ticket, not(containsString(hsaID)));
+		assertThat(ticket, not(containsString(">" + katalog + "<")));
+		assertThat(ticket, not(containsString(organisationsnummer)));
+		assertThat(ticket, not(containsString(">" + systemnamn + "<")));
+		assertThat(ticket, not(containsString(">" + systemversion + "<")));
+		assertThat(ticket, not(containsString(systemIp)));
+		
+	}
+	
 	@Test
 	public void ineraCodeDoesNotGiveErrorWhenOneFieldIsNull() {
 
@@ -91,6 +144,7 @@ public class ArgosTicketTest {
 	
 	@Test
 	public void a_ticket_for_usage_in_individual_based_services_can_be_produced() {
+
 		//given
 		String fornamn = "Lars";
 		String efternamn = "Larsson";
@@ -103,8 +157,46 @@ public class ArgosTicketTest {
 		String systemversion = "1.0";
 		String ticket = new ArgosTicket().getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
 		
-		assertThat(ticket, not(containsString("urn:apotekensservice:names:federation:attributeName:rollnamn")));
 		
+		assertsForCitizenTicket(fornamn, efternamn, rollnamn, personnummer,
+				organisationsnummer, requestId, systemIp, systemnamn,
+				systemversion, ticket);
+	}
+	
+	@Test
+	public void a_ticket_for_usage_in_individual_based_services_used_in_a_static_context_does_not_cache_values() {
+		
+		//An ArgosTicket that we will reuse, simulating how clients use it in a static context. This should not cache values.
+		final ArgosTicket argosTicket = new ArgosTicket();
+		
+		//given
+		String fornamn = "Lars";
+		String efternamn = "Larsson";
+		String rollnamn = "PRIVATPERSON";
+		String personnummer = "197109231234";
+		String organisationsnummer = "MVK_111111111";
+		String requestId = "12345676";
+		String systemIp = "192.168.1.1";
+		String systemnamn = "Mina vardkontakter";
+		String systemversion = "1.0";
+		String ticket = argosTicket.getTicketForCitizen(fornamn, efternamn, personnummer, rollnamn, organisationsnummer, requestId, systemIp, systemnamn, systemversion) ;
+		
+		ticket = argosTicket.getTicketForCitizen(null, null, null, null, null, null, null, null, null);
+
+		assertThat(ticket, not(containsString(fornamn)));
+		assertThat(ticket, not(containsString(efternamn)));
+		assertThat(ticket, not(containsString(personnummer)));
+		assertThat(ticket, not(containsString(organisationsnummer)));
+		assertThat(ticket, not(containsString(rollnamn)));
+		assertThat(ticket, not(containsString(requestId)));
+		assertThat(ticket, not(containsString(systemversion)));
+		assertThat(ticket, not(containsString(systemIp)));
+	}
+
+	private void assertsForCitizenTicket(String fornamn, String efternamn,
+			String rollnamn, String personnummer, String organisationsnummer,
+			String requestId, String systemIp, String systemnamn,
+			String systemversion, String ticket) {
 		//Autentiseringsintyget
 		//directoryId
 		String expectedDirectoryIDSamlAttribute = format(samlAttributeTemplate,
@@ -202,6 +294,7 @@ public class ArgosTicketTest {
 				"Ticket should contain urn for assertionType and the value InfoData",
 				ticket, containsString(expectedAssertionTypeInfoDataSamlAttribute));
 	}
+	
 	private String getConnectedAssertionIDFromTicket(String ticket) {
 		String connectedAssertionId = null;
 		
