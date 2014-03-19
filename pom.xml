@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>se.inera.pascal.ticket</groupId>
+	<groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
 	<artifactId>TicketMachine</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
@@ -12,11 +12,10 @@
 		<opensaml.version>2.4.1</opensaml.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-		<spring.version>2.5.6</spring.version>
+		<spring.version>3.1.1.RELEASE</spring.version>
 	</properties>
 
 	<scm>
-	
         <connection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</connection>
         <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</developerConnection>
         <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</url>
@@ -50,11 +49,76 @@
 		</dependency>
 		<dependency>
 			<groupId>javax.xml</groupId>
-			<artifactId>jaxrpc</artifactId>
+			<artifactId>jaxrpc-api</artifactId>
 			<version>1.1</version>
 			<optional>true</optional>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+			<exclusions>
+				<exclusion>
+          			<groupId>commons-collections</groupId>
+          			<artifactId>commons-collections</artifactId>
+        		</exclusion>
+        		<exclusion>
+          			<groupId>commons-lang</groupId>
+          			<artifactId>commons-lang</artifactId>
+        		</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.owasp.esapi</groupId>
+			<artifactId>esapi</artifactId>
+			<version>2.1.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-beanutils</artifactId>
+					<groupId>commons-beanutils</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-digester</artifactId>
+					<groupId>commons-digester</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xercesImpl</artifactId>
+					<groupId>xerces</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xml-apis</artifactId>
+					<groupId>xml-apis</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang</artifactId>
+					<groupId>commons-lang</groupId>
+				</exclusion>
+				<exclusion>
+          			<groupId>commons-collections</groupId>
+          			<artifactId>commons-collections</artifactId>
+        		</exclusion>
+        		<exclusion>
+         			<groupId>commons-configuration</groupId>
+  					<artifactId>commons-configuration</artifactId>
+        		</exclusion>
+				<exclusion>
+					<artifactId>commons-fileupload</artifactId>
+					<groupId>commons-fileupload</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15</artifactId>
+			<version>1.45</version>
+		</dependency>
+
+
 		<!-- TEST DEPENDENCIES -->
 		<dependency>
 			<groupId>org.jmock</groupId>
@@ -81,6 +145,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
 				<configuration>
 					<archive>
 						<manifest>
