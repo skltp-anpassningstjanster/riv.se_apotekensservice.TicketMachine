@@ -16,9 +16,9 @@
 	</properties>
 
 	<scm>
-        <connection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</connection>
-        <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</developerConnection>
-        <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk/</url>
+        <connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</connection>
+        <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</developerConnection>
+        <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</url>
     </scm>
     
 	<dependencies>
