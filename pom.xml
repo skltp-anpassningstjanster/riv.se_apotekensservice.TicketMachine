@@ -1,6 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+
+	<parent>
+    	<groupId>org.sonatype.oss</groupId>
+    	<artifactId>oss-parent</artifactId>
+    	<version>7</version>
+  	</parent>
+
 	<groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
 	<artifactId>TicketMachine</artifactId>
 	<packaging>jar</packaging>
@@ -13,14 +20,16 @@
 		<slf4j.version>1.6.1</slf4j.version>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<spring.version>3.1.1.RELEASE</spring.version>
+		<sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
+		<maven-gpg-plugin.version>1.1</maven-gpg-plugin.version>
 	</properties>
 
 	<scm>
-        <connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</connection>
+        <connection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</connection>
         <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</developerConnection>
         <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</url>
     </scm>
-    
+	
 	<dependencies>
 		
 		<dependency>
@@ -138,8 +147,9 @@
 			<version>1.8.5</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
+	
+	
 	<build>
 		<plugins>
 			<plugin>
