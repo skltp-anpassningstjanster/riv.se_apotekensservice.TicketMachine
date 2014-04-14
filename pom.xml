@@ -17,6 +17,8 @@
 
 	<properties>
 		<opensaml.version>2.4.1</opensaml.version>
+		<commons-lang.version>2.4</commons-lang.version>
+		<commons-collection.version>3.2.1</commons-collection.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<spring.version>3.1.1.RELEASE</spring.version>
@@ -29,6 +31,23 @@
         <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</developerConnection>
         <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</url>
     </scm>
+    
+    <dependencyManagement>
+    
+    	<dependencies>
+    		<!-- Keep in sync with Mule 3.3.1 dependencies  -->
+    		<dependency>
+    			<groupId>commons-lang</groupId>
+          		<artifactId>commons-lang</artifactId>
+          		<version>${commons-lang.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>commons-collections</groupId>
+          		<artifactId>commons-collections</artifactId>
+          		<version>${commons-collection.version}</version>
+    		</dependency>
+    	</dependencies>
+    </dependencyManagement>
 	
 	<dependencies>
 		
@@ -48,7 +67,6 @@
 					<groupId>org.slf4j</groupId>
 				</exclusion>
 			</exclusions>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.axis</groupId>
@@ -61,22 +79,6 @@
 			<artifactId>jaxrpc-api</artifactId>
 			<version>1.1</version>
 			<optional>true</optional>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.velocity</groupId>
-			<artifactId>velocity</artifactId>
-			<version>1.7</version>
-			<exclusions>
-				<exclusion>
-          			<groupId>commons-collections</groupId>
-          			<artifactId>commons-collections</artifactId>
-        		</exclusion>
-        		<exclusion>
-          			<groupId>commons-lang</groupId>
-          			<artifactId>commons-lang</artifactId>
-        		</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.owasp.esapi</groupId>
