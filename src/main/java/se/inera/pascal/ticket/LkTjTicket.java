@@ -32,7 +32,7 @@ public class LkTjTicket implements ServiceLifecycle {
 	// Inkommande biljett måste vara Base64-enkodad för att minimera risk med
 	// valideringsfel. Det behövs också för att web-tjänsten inte skall parsa
 	// biljetten.
-	public WSReturn getTicket(String b64LkTjTicket, String rollnamn, String katalogId, String katalog,
+	public WSReturn getTicket(String b64LkTjTicket, String roll, String katalogId, String katalog,
 			String forskrivarkod, String legitimationskod, String yrkeskod, String befattningskod, String fornamn,
 			String efternamn, String arbetsplatskod, String arbetsplats, String postadress, String postnummer,
 			String postort, String telefonnummer) {
@@ -42,8 +42,8 @@ public class LkTjTicket implements ServiceLifecycle {
 			b64LkTjTicket = "";
 		}
 		String lktjTicket = new String(Base64.decode(b64LkTjTicket));
-		if (rollnamn == null) {
-			rollnamn = "";
+		if (roll == null) {
+			roll = "";
 		}
 		if (katalogId == null) {
 			katalogId = "";
@@ -98,7 +98,7 @@ public class LkTjTicket implements ServiceLifecycle {
 		authoAttr.setPostadress(postadress);
 		authoAttr.setPostnummer(postnummer);
 		authoAttr.setPostort(postort);
-		authoAttr.setRollnamn(rollnamn);
+		authoAttr.setRoll(roll);
 		authoAttr.setTelefonnummer(telefonnummer);
 		authoAttr.setYrkeskod(yrkeskod);
 

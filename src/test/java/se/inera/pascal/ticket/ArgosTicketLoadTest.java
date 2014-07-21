@@ -56,7 +56,7 @@ public class ArgosTicketLoadTest {
 		String postnummer = "11111";
 		String telefonnummer = "0987654321";
 		String requestId = "12345676";
-		String rollnamn = "LK";
+		String roll = "LK";
 		// String directoryID = "SE1111111111-1003";
 		String hsaID = "SE1111111111-1003";
 		String katalog = "HSA";
@@ -67,7 +67,7 @@ public class ArgosTicketLoadTest {
 
 		return new ArgosTicket().getTicketForOrganization(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
 					befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
-					requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
+					requestId, roll, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
 
 	}
 	
@@ -85,7 +85,7 @@ public class ArgosTicketLoadTest {
 		String postnummer = "11111";
 		String telefonnummer = "0987654321";
 		String requestId = "12345676";
-		String rollnamn = "LK";
+		String roll = "LK";
 		// String directoryID = "SE1111111111-1003";
 		String hsaID = "SE1111111111-1003";
 		String katalog = "HSA";
@@ -96,7 +96,7 @@ public class ArgosTicketLoadTest {
 
 		return argosTicket.getTicketForOrganization(forskrivarkod, legitimationskod, fornamn, efternamn, yrkesgrupp,
 					befattningskod, arbetsplatskod, arbetsplatsnamn, postort, postadress, postnummer, telefonnummer,
-					requestId, rollnamn, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
+					requestId, roll, hsaID, katalog, organisationsnummer, systemnamn, systemversion, systemIp);
 
 	}
 

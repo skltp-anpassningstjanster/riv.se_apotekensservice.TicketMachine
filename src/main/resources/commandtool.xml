@@ -22,7 +22,7 @@
        		<property name="organisationID" value="${organisationID}" />
        </bean>
        <bean id="apse_authorization" class="se.inera.pascal.ticket.core.ApseAuthorizationAttributes">
-			<property name="rollnamn" value="${rollnamn}"/>
+			<property name="roll" value="${roll}"/>
 			<property name="katalogId" value="${katalogId}"/>
 			<property name="katalog" value="${katalog}"/>
 			<property name="forskrivarkod" value="${forskrivarkod}"/>

@@ -27,7 +27,7 @@ public class BIFTicket implements ServiceLifecycle {
 		requestIP = (String) ctx.getMessageContext().getProperty("remoteaddr");
 	}
 
-	public WSReturn getTicket(String b64BIFTicket, String rollnamn, String katalogId, String katalog,
+	public WSReturn getTicket(String b64BIFTicket, String roll, String katalogId, String katalog,
 			String forskrivarkod, String legitimationskod, String yrkeskod, String befattningskod, String fornamn,
 			String efternamn, String arbetsplatskod, String arbetsplats, String postadress, String postnummer,
 			String postort, String telefonnummer) {
@@ -38,8 +38,8 @@ public class BIFTicket implements ServiceLifecycle {
 		}
 		String bifTicket = new String(Base64.decode(b64BIFTicket));
 
-		if (rollnamn == null) {
-			rollnamn = "";
+		if (roll == null) {
+			roll = "";
 		}
 		if (katalogId == null) {
 			katalogId = "";
@@ -93,7 +93,7 @@ public class BIFTicket implements ServiceLifecycle {
 		authoAttr.setPostadress(postadress);
 		authoAttr.setPostnummer(postnummer);
 		authoAttr.setPostort(postort);
-		authoAttr.setRollnamn(rollnamn);
+		authoAttr.setRoll(roll);
 		authoAttr.setTelefonnummer(telefonnummer);
 		authoAttr.setYrkeskod(yrkeskod);
 

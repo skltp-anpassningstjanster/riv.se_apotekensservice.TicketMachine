@@ -28,7 +28,7 @@ public class ArgosTicket {
 	 * @param postnummer
 	 * @param telefonnummer
 	 * @param requestId
-	 * @param rollnamn
+	 * @param roll
 	 * @param hsaID
 	 * @param katalog
 	 * @param organisationsnummer
@@ -39,7 +39,7 @@ public class ArgosTicket {
 	 */
 	public String getTicketForOrganization(String forskrivarkod, String legitimationskod, String fornamn, String efternamn,
 			String Yrkesgrupp, String befattningskod, String arbetsplatskod, String arbetsplatsnamn, String postort,
-			String postadress, String postnummer, String telefonnummer, String requestId, String rollnamn,
+			String postadress, String postnummer, String telefonnummer, String requestId, String roll,
 			String hsaID, String katalog, String organisationsnummer, String systemnamn, String systemversion,
 			String systemIp) {
 		String retval = "";
@@ -66,7 +66,7 @@ public class ArgosTicket {
 			authoAttr.setPostadress(postadress);
 			authoAttr.setPostnummer(postnummer);
 			authoAttr.setPostort(postort);
-			authoAttr.setRollnamn(rollnamn);
+			authoAttr.setRoll(roll);
 			authoAttr.setTelefonnummer(telefonnummer);
 			authoAttr.setYrkeskod(Yrkesgrupp);
 
@@ -100,7 +100,7 @@ public class ArgosTicket {
 	 * @param fornamn
 	 * @param efternamn
 	 * @param personnummer
-	 * @param rollnamn
+	 * @param roll
 	 * @param organisationsnummer
 	 * @param requestId
 	 * @param systemIp
@@ -109,7 +109,7 @@ public class ArgosTicket {
 	 * @return
 	 */
 	public String getTicketForCitizen(String fornamn, String efternamn,
-			String personnummer, String rollnamn, String organisationsnummer,
+			String personnummer, String roll, String organisationsnummer,
 			String requestId, String systemIp, String systemnamn, String systemversion) {
 		String retval = "";
 		SAML2AssertionTicketGeneratorLauncher launcher;
@@ -128,11 +128,10 @@ public class ArgosTicket {
 			
 			/*
 			 * Obs! Roll är det attribut i säkerhetsheadern som ska användas enligt dokumentet
-			 * Säkerhetsheader v1.0 från Apotekens service. Vi behåller dock det parallella spåret
-			 * med rollnamn för organisationsbiljetter för att befintlig kod i produktion ej ska drabbas.
-			 * Se https://skl-tp.atlassian.net/browse/SKLTP-346
+			 * Säkerhetsheader v1.0 från Apotekens service. Tidigare fanns även rollnamn felaktigt
+			 * i biljettautomaten, men har rättats i NTP-12.
 			 */
-			authoAttr.setRoll(rollnamn); 
+			authoAttr.setRoll(roll); 
 			authoAttr.setPersonnummer(personnummer);
 			authoAttr.setOrganisationsnummer(organisationsnummer);
 			

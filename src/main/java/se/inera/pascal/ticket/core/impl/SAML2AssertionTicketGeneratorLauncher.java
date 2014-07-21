@@ -199,7 +199,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 
 	private void configureAttributes(ApseAuthorizationAttributes autho, ApseAuthenticationAttributes authn,
 			ApseInfoAttributes info) {
-		configureAuthoAttributes(autho.getRollnamn(), autho.getKatalogId(), autho.getKatalog(),
+		configureAuthoAttributes(autho.getRoll(), autho.getKatalogId(), autho.getKatalog(),
 				autho.getForskrivarkod(), autho.getLegitimationskod(), autho.getYrkeskod(), autho.getBefattningskod(),
 				autho.getFornamn(), autho.getEfternamn(), autho.getArbetsplatskod(), autho.getArbetsplats(),
 				autho.getPostadress(), autho.getPostnummer(), autho.getPostort(), autho.getTelefonnummer());
@@ -277,8 +277,8 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		if (StringUtils.isNotEmpty(attribs.getPostort())) {
 			apseAuthorization.setPostort(attribs.getPostort());
 		}
-		if (StringUtils.isNotEmpty(attribs.getRollnamn())) {
-			apseAuthorization.setRollnamn(attribs.getRollnamn());
+		if (StringUtils.isNotEmpty(attribs.getRoll())) {
+			apseAuthorization.setRoll(attribs.getRoll());
 		}
 		if (StringUtils.isNotEmpty(attribs.getTelefonnummer())) {
 			apseAuthorization.setTelefonnummer(attribs.getTelefonnummer());
@@ -383,13 +383,13 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 
 	}
 
-	private void configureAuthoAttributes(String rollnamn, String katalogId, String katalog, String forskrivarkod,
+	private void configureAuthoAttributes(String roll, String katalogId, String katalog, String forskrivarkod,
 			String legitimationskod, String yrkeskod, String befattningskod, String fornamn, String efternamn,
 			String arbetsplatskod, String arbetsplats, String postadress, String postnummer, String postort,
 			String telefonnummer) {
 		List<SAML2Attribute> authoAttributes = new ArrayList<SAML2Attribute>();
-		if(StringUtils.isNotEmpty(rollnamn)) {
-			SAML2Attribute rnamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE_NAME, rollnamn);
+		if(StringUtils.isNotEmpty(roll)) {
+			SAML2Attribute rnamn = new SAML2Attribute(StringConstants.ATTRIBUTE_AUTHORIZATION_ROLE, roll);
 			authoAttributes.add(rnamn);
 		}
 		

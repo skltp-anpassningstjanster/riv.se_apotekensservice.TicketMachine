@@ -21,7 +21,6 @@ public interface StringConstants {
 	public final static String ATTRIBUTE_AUTHENTICATION_ORGANIZATIONID = "OrganizationID";
 
 	public final static String ATTRIBUTE_AUTHORIZATION_DATA = "AuthorizationData";
-	public final static String ATTRIBUTE_AUTHORIZATION_ROLE_NAME = "rollnamn"; //se https://skl-tp.atlassian.net/browse/SKLTP-346
 	public final static String ATTRIBUTE_AUTHORIZATION_DIRECTORY_ID = "katalogId";
 	public final static String ATTRIBUTE_AUTHORIZATION_DIRECTORY = "katalog";
 	public final static String ATTRIBUTE_AUTHORIZATION_PRESCIBERCODE = "forskrivarkod"; 

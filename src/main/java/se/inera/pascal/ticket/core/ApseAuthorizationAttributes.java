@@ -1,7 +1,6 @@
 package se.inera.pascal.ticket.core;
 
 public class ApseAuthorizationAttributes {
-	private String rollnamn = "";
 	private String katalogId = "";
 	private String katalog = "";
 	private String forskrivarkod = "";
@@ -18,17 +17,9 @@ public class ApseAuthorizationAttributes {
 	private String telefonnummer = "";
 	private String personnummer = "";
 	private String organisationsnummer = "";
-	private String roll = ""; //Se getter och setter för kommentar kring detta fälts relation med rollnamn.
+	private String roll = "";
 
 	public ApseAuthorizationAttributes() {
-	}
-
-	public void setRollnamn(String rollnamn) {
-		this.rollnamn = rollnamn;
-	}
-
-	public String getRollnamn() {
-		return rollnamn;
 	}
 
 	public void setKatalogId(String katalogId) {
@@ -161,9 +152,8 @@ public class ApseAuthorizationAttributes {
 
 	/**
 	 * Obs! Roll är det attribut i säkerhetsheadern som ska användas enligt dokumentet
-	 * Säkerhetsheader v1.0 från Apotekens service. Vi behåller dock det parallella spåret
-	 * med rollnamn för organisationsbiljetter för att befintlig kod i produktion ej ska drabbas.
-	 * Se https://skl-tp.atlassian.net/browse/SKLTP-346
+	 * Säkerhetsheader v1.0 från Apotekens service. Tidigare fanns även rollnamn felaktigt
+	 * i biljettautomaten, men har rättats i NTP-12.
 	 * 
 	 * @param roll
 	 */
@@ -173,9 +163,8 @@ public class ApseAuthorizationAttributes {
 	
 	/**
 	 * Obs! Roll är det attribut i säkerhetsheadern som ska användas enligt dokumentet
-	 * Säkerhetsheader v1.0 från Apotekens service. Vi behåller dock det parallella spåret
-	 * med rollnamn för organisationsbiljetter för att befintlig kod i produktion ej ska drabbas.
-	 * Se https://skl-tp.atlassian.net/browse/SKLTP-346
+	 * Säkerhetsheader v1.0 från Apotekens service. Tidigare fanns även rollnamn felaktigt
+	 * i biljettautomaten, men har rättats i NTP-12.
 	 * 
 	 * @return roll
 	 */

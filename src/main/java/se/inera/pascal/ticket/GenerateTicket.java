@@ -50,7 +50,7 @@ public class GenerateTicket implements ServiceLifecycle {
 
 	// TODO: den skall tas bort som exponerad webservice före release
 	// denna metod/webservice används enbart i utvecklings- och testsyfte,
-	public WSReturn getTicket(String rollnamn, String katalogId, String katalog, String forskrivarkod,
+	public WSReturn getTicket(String roll, String katalogId, String katalog, String forskrivarkod,
 			String legitimationskod, String yrkeskod, String befattningskod, String fornamn, String efternamn,
 			String arbetsplatskod, String arbetsplats, String postadress, String postnummer, String postort,
 			String telefonnummer) {
@@ -59,8 +59,8 @@ public class GenerateTicket implements ServiceLifecycle {
 		logger.info(logMess);
 
 		// fil används enbart i testsyfte
-		if (rollnamn.startsWith("file:")) {
-			String file = rollnamn.substring(5);
+		if (roll.startsWith("file:")) {
+			String file = roll.substring(5);
 			analyzeXML(file, false, true);
 		} else {
 			ApseAuthorizationAttributes authoAttr = new ApseAuthorizationAttributes();
@@ -76,7 +76,7 @@ public class GenerateTicket implements ServiceLifecycle {
 			authoAttr.setPostadress(postadress);
 			authoAttr.setPostnummer(postnummer);
 			authoAttr.setPostort(postort);
-			authoAttr.setRollnamn(rollnamn);
+			authoAttr.setRoll(roll);
 			authoAttr.setTelefonnummer(telefonnummer);
 			authoAttr.setYrkeskod(yrkeskod);
 

@@ -133,7 +133,7 @@
 				xsi:type="xs:string">AuthorizationData</saml2:AttributeValue>
 		</saml2:Attribute>
 		<saml2:Attribute
-			Name="urn:apotekensservice:names:federation:attributeName:rollnamn"
+			Name="urn:apotekensservice:names:federation:attributeName:roll"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
 			<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				xsi:type="xs:string">FORSKRIVARE</saml2:AttributeValue>

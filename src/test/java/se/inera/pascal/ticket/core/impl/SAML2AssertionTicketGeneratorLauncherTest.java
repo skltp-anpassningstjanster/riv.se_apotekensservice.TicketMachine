@@ -27,7 +27,7 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 		expected.setPostadress("Fabriskgatan 13");
 		expected.setPostnummer("44266");
 		expected.setPostort("Stockholm");
-		expected.setRollnamn("EN ROLL");
+		expected.setRoll("EN ROLL");
 		expected.setTelefonnummer("08 1234567890");
 		expected.setYrkeskod("YK");
 		launcher.setIncomingAuthorizationAttributes(expected);
@@ -47,7 +47,7 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 		assertEquals(expected.getPostadress(), actual.getPostadress());
 		assertEquals(expected.getPostnummer(), actual.getPostnummer());
 		assertEquals(expected.getPostort(), actual.getPostort());
-		assertEquals(expected.getRollnamn(), actual.getRollnamn());
+		assertEquals(expected.getRoll(), actual.getRoll());
 		assertEquals(expected.getTelefonnummer(), actual.getTelefonnummer());
 		assertEquals(expected.getYrkeskod(), actual.getYrkeskod());
 
@@ -58,21 +58,21 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 
 		//Defaultvalues are found in apse_authorization.properties
 		/*
-			rollnamn=rollnamn
-			katalogId=katalogId
-			katalog=123
+			roll=
+			katalogId=
+			katalog=
 			forskrivarkod=
-			legitimationskod=1234567
-			yrkeskod=12
-			befattningskod=befattningskod
-			fornamn=fornamn
-			efternamn=efternamn
-			arbetsplatskod=arbetsplatskod
-			arbetsplats=arbetsplats
-			postadress=postadress
-			postnummer=12345
-			postort=postort
-			telefonnummer=telefonnummer 
+			legitimationskod=
+			yrkeskod=
+			befattningskod=
+			fornamn=
+			efternamn=
+			arbetsplatskod=
+			arbetsplats=
+			postadress=
+			postnummer=
+			postort=
+			telefonnummer=
 		*/
 		
 		SAML2AssertionTicketGeneratorLauncher launcher = new SAML2AssertionTicketGeneratorLauncher();
@@ -96,7 +96,7 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 		assertEquals("", actual.getPostadress());
 		assertEquals("", actual.getPostnummer());
 		assertEquals("", actual.getPostort());
-		assertEquals("", actual.getRollnamn());
+		assertEquals("", actual.getRoll());
 		assertEquals("", actual.getTelefonnummer());
 		assertEquals("", actual.getYrkeskod());
 		assertEquals("", actual.getPersonnummer());
@@ -118,7 +118,7 @@ public class SAML2AssertionTicketGeneratorLauncherTest {
 		expected.setPostadress(null);
 		expected.setPostnummer(null);
 		expected.setPostort(null);
-		expected.setRollnamn(null);
+		expected.setRoll(null);
 		expected.setTelefonnummer(null);
 		expected.setYrkeskod(null);
 
