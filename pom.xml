@@ -27,13 +27,14 @@
 	</properties>
 
 	<scm>
-        <connection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</connection>
-        <developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</developerConnection>
-        <url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.se_apotekensservice/TicketMachine/trunk</url>
-    </scm>
-    
+		<url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine</url>
+		<connection>scm:git:git://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</connection>
+		<developerConnection>scm:git:git://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
     <dependencyManagement>
-    
+
     	<dependencies>
     		<!-- Keep in sync with Mule 3.3.1 dependencies  -->
     		<dependency>
@@ -48,9 +49,9 @@
     		</dependency>
     	</dependencies>
     </dependencyManagement>
-	
+
 	<dependencies>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -150,9 +151,24 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	
+
+
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>2.5.1</version>
+						<configuration>
+								<autoVersionSubmodules>true</autoVersionSubmodules>
+								<tagNameFormat>v@{project.version}</tagNameFormat>
+								<pushChanges>false</pushChanges>
+								<localCheckout>true</localCheckout>
+						</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
