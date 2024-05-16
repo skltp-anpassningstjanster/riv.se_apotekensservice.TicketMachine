@@ -3,3 +3,4 @@ sonar-test-inclusions: '**/src/test/**/*.java'                                  
 maven-docker-args: '-e GRAILS_MAVEN_LOCAL=${WORKSPACE}/?/.m2/repository/'                                                # Extra maven docker image arguments.
 maven-docker-image: 'maven:3.9-eclipse-temurin-8'                                                                        # The Maven Docker image to use.
 jdk-path: 'Java_8_221'                                                                                                   # JDK path.
+skip-stages: 'Cleanup'
