@@ -17,6 +17,8 @@
         <spring.version>3.1.1.RELEASE</spring.version>
         <maven-gpg-plugin.version>1.1</maven-gpg-plugin.version>
         <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
+
+        <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
     <scm>
@@ -134,7 +136,11 @@
             <artifactId>bcprov-jdk15</artifactId>
             <version>1.45</version>
         </dependency>
-
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>6.0</version>
+        </dependency>
 
         <!-- TEST DEPENDENCIES -->
         <dependency>

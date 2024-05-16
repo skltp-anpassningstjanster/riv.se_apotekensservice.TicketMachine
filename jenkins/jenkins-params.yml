@@ -1,6 +1,3 @@
 sonar-projectkey: 'ntjp-ticketmachine'                                                                                   # The project key for the project.
 sonar-test-inclusions: '**/src/test/**/*.java'                                                                           # What tests to include in the scan.
 sonar-java-binaries: 'target/classes/**/*'                                                                               # What binaries to scan.
-maven-docker-args: '-e GRAILS_MAVEN_LOCAL=${WORKSPACE}/?/.m2/repository/'                                                # Extra maven docker image arguments.
-maven-docker-image: 'maven:3.9-eclipse-temurin-8'                                                                        # The Maven Docker image to use.
-jdk-path: 'Java_8_221'                                                                                                   # JDK path.
