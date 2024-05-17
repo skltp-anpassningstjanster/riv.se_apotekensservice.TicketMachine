@@ -12,11 +12,13 @@
         <opensaml.version>2.4.1</opensaml.version>
         <commons-lang.version>2.4</commons-lang.version>
         <commons-collection.version>3.2.1</commons-collection.version>
-        <slf4j.version>1.6.1</slf4j.version>
+        <slf4j.version>2.0.12</slf4j.version>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-        <spring.version>3.1.1.RELEASE</spring.version>
+        <spring.version>4.1.6.RELEASE</spring.version>
         <maven-gpg-plugin.version>1.1</maven-gpg-plugin.version>
         <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
+
+        <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
     <scm>
@@ -56,7 +58,6 @@
     </dependencyManagement>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -135,8 +136,18 @@
             <version>1.45</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.xml.soap</groupId>
+            <artifactId>javax.xml.soap-api</artifactId>
+            <version>1.4.0</version>
+        </dependency>
 
         <!-- TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.jmock</groupId>
             <artifactId>jmock-junit4</artifactId>
