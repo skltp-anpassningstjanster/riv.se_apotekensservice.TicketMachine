@@ -8,7 +8,7 @@ import org.apache.axis.encoding.Base64;
 
 import se.inera.pascal.ticket.core.ApseAuthorizationAttributes;
 
-// utöka implementationen av ServiceLifecycle för att på ett enkelt sätt
+// ut√∂ka implementationen av ServiceLifecycle f√∂r att p√• ett enkelt s√§tt
 // logga inkommande/klientens IP-nummer
 public class LkTjTicket implements ServiceLifecycle {
 
@@ -29,8 +29,8 @@ public class LkTjTicket implements ServiceLifecycle {
 		requestIP = (String) ctx.getMessageContext().getProperty("remoteaddr");
 	}
 
-	// Inkommande biljett måste vara Base64-enkodad för att minimera risk med
-	// valideringsfel. Det behövs också för att web-tjänsten inte skall parsa
+	// Inkommande biljett m√•ste vara Base64-enkodad f√∂r att minimera risk med
+	// valideringsfel. Det beh√∂vs ocks√• f√∂r att web-tj√§nsten inte skall parsa
 	// biljetten.
 	public WSReturn getTicket(String b64LkTjTicket, String roll, String katalogId, String katalog,
 			String forskrivarkod, String legitimationskod, String yrkeskod, String befattningskod, String fornamn,

@@ -6,12 +6,6 @@ public class DefaultValues {
 	private ApseAuthenticationAttributes apseAuthenticationAttributes;
 	private ApseAuthorizationAttributes apseAuthorizationAttributes;
 	private ApseInfoAttributes apseInfoAttributes;
-//	private String directoryID;
-//	private String organisationID;
-//	private String systemNamn;
-//	private String systemVersion;
-//	private String systemIP;
-//	private String requestID;
 	private String certificateSubjectName;
 	private String certificateSubject;
 	private String certificateSerial;
@@ -45,42 +39,7 @@ public class DefaultValues {
 	public ApseInfoAttributes getApseInfoAttributes(){
 		return apseInfoAttributes;
 	}
-//	public void setDirectoryID(String directoryID){
-//		this.directoryID = directoryID;
-//	}
-//	public String getDirectoryID(){
-//		return directoryID;
-//	}
-//	public void setOrganisationID(String organisationID){
-//		this.organisationID = organisationID;
-//	}
-//	public String getOrganisationID(){
-//		return organisationID;
-//	}
-//	public void setSystemNamn(String systemNamn){
-//		this.systemNamn = systemNamn;
-//	}
-//	public String getSystemNamn(){
-//		return systemNamn;
-//	}
-//	public void setSystemVersion(String systemVersion){
-//		this.systemVersion = systemVersion;
-//	}
-//	public String getSystemVersion(){
-//		return systemVersion;
-//	}
-//	public void setSystemIP(String systemIP){
-//		this.systemIP = systemIP;
-//	}
-//	public String getSystemIP(){
-//		return systemIP;
-//	}
-//	public void setRequestID(String requestID){
-//		this.requestID = requestID;
-//	}
-//	public String getRequestID(){
-//		return requestID;
-//	}
+
 	public void setCertificateSubjectName(String certificateSubjectName){
 		this.certificateSubjectName = certificateSubjectName;
 	}

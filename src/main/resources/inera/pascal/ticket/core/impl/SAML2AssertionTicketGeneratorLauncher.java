@@ -54,7 +54,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 			logger.debug("Loading Ticket Generator");
 			atg = (SAML2AssertionTicketGenerator)appCtx.getBean("saml2AssertionTicketGenerator");
 			logger.debug("Loading Default Values");
-			//DefaultValues är en "container" för samtliga standard värden som vi använder i applikationen
+			//DefaultValues är en "container" fˆr samtliga standard värden som vi använder i applikationen
 			//vissa av dessa värden bör normalt ändras av inkommande biljetter 
 			defVal = (DefaultValues)appCtx.getBean("defaultValues");
 			parser = (BasicParserPool)appCtx.getBean("parser");
@@ -107,7 +107,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 				String name = att.getName().toLowerCase();
 				String value = att.getValue();
 				//assertionID är den inkommande biljettens unika ID, vi återanvänder det värdet
-				//och sätter det som unikt id mot ApSe 
+				//och s‰tter det som unikt id mot ApSe 
 				if( name.contains(("AssertionID").toLowerCase()) ){ //TODO: remove hard coded string?
 					if (value.length() > 20  ){
 						value = value.substring(0,19);
@@ -208,7 +208,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		return getValidToString(atg);
 	}
 	
-	//sätt default-värden, om de inte innehåller något.
+	//s‰tt default-värden, om de inte innehåller något.
 	public void setIncomingAuthorizationAttributes(ApseAuthorizationAttributes attribs){
 		if ( !attribs.getArbetsplats().isEmpty() ){
 			apseAuthorization.setArbetsplats(attribs.getArbetsplats());

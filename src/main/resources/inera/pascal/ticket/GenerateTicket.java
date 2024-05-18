@@ -12,7 +12,7 @@ import se.inera.pascal.ticket.core.ApseAuthorizationAttributes;
 import se.inera.pascal.ticket.core.ApseInfoAttributes;
 import se.inera.pascal.ticket.core.impl.SAML2AssertionTicketGeneratorLauncher;
 
-//utöka implementationen av ServiceLifecycle för att på ett enkelt sätt
+//utöka implementationen av ServiceLifecycle fˆr att pÂ ett enkelt s‰tt
 //logga inkommande/klientens IP-nummer
 public class GenerateTicket implements ServiceLifecycle{
 	
@@ -39,12 +39,12 @@ public class GenerateTicket implements ServiceLifecycle{
 		ServletEndpointContext ctx = (ServletEndpointContext) obj;
 		requestIP = (String) ctx.getMessageContext().getProperty("remoteaddr");
 	}
-	//används bara för BIF/LkTj-ticket för att sätta klientens IP
+	//används bara fˆr BIF/LkTj-ticket fˆr att s‰tta klientens IP
 	protected void setIP(String ip){
 		requestIP = ip;
 		//TODO: använda som infoAttribut?
 	}
-	//TODO: den skall tas bort som exponerad webservice före release 
+	//TODO: den skall tas bort som exponerad webservice fˆre release 
 	//denna metod/webservice används enbart i utvecklings- och testsyfte,
 	public WSReturn getTicket(String rollnamn,
 							String katalogId,
@@ -97,7 +97,7 @@ public class GenerateTicket implements ServiceLifecycle{
 	}
 	
 	//anropas av LkTjTicket/BIFTicket
-	//sätter authorization-attributens default-värden. Ändras eventuell av värdena i biljetten
+	//s‰tter authorization-attributens default-värden. Ändras eventuell av värdena i biljetten
 	protected void setIncomingAuthorizationAttributes(ApseAuthorizationAttributes attrs){
 		if ( launcher != null){
 			launcher.setIncomingAuthorizationAttributes(attrs);

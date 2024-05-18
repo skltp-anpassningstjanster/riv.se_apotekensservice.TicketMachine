@@ -28,7 +28,7 @@ public class XMLParser {
 	private static final Logger logger = LoggerFactory.getLogger(XMLParser.class);
 	
 	//skapa en lista av Assertions
-	//denna lista kommer enbart innehŒlla en post
+	//denna lista kommer enbart innehhålla en post
 	private List<Assertion> assertions = null;
 	private boolean isBIF = true;
 	
@@ -65,7 +65,7 @@ public class XMLParser {
 			String name;
 			String value;
 			if ( !isBIF ){
-				//LkTj-biljetten sŠtter fšrskrivarkoden som NameID
+				//LkTj-biljetten sätter förskrivarkoden som NameID
 				name = assertion.getSubject().getNameID().getFormat();
 				value = assertion.getSubject().getNameID().getValue();
 				logMess = " " + name + " : " + value;

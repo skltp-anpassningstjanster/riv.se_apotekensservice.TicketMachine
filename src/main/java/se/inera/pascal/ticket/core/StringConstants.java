@@ -53,8 +53,8 @@ public interface StringConstants {
 	public final static String LKTJ_TICKET_SYSTEMIP = "systemlocality";
 	public final static String LKTJ_TICKET_SYSTEMNAME = "systemidentifier";
 	
-	public final static String BIF_TICKET_PRESCRIBERCODE = "frskrivarkod";
-	public final static String BIF_TICKET_FIRSTNAME = "frnamn";
+	public final static String BIF_TICKET_PRESCRIBERCODE = "förskrivarkod";
+	public final static String BIF_TICKET_FIRSTNAME = "förnamn";
 	public final static String BIF_TICKET_LASTNAME = "efternamn";
 	public final static String BIF_TICKET_POSITIONCODE = "befattningskod";
 	

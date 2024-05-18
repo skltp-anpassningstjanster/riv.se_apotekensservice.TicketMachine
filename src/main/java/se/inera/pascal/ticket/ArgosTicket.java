@@ -127,9 +127,9 @@ public class ArgosTicket {
 			authoAttr.setFornamn(fornamn);
 			
 			/*
-			 * Obs! Roll ‰r det attribut i s‰kerhetsheadern som ska anv‰ndas enligt dokumentet
-			 * S‰kerhetsheader v1.0 frÂn Apotekens service. Tidigare fanns ‰ven rollnamn felaktigt
-			 * i biljettautomaten, men har r‰ttats i NTP-12.
+			 * Obs! Roll √§r det attribut i s√§kerhetsheadern som ska anv√§ndas enligt dokumentet
+			 * S√§kerhetsheader v1.0 fr√•n Apotekens service. Tidigare fanns √§ven rollnamn felaktigt
+			 * i biljettautomaten, men har r√§ttats i NTP-12.
 			 */
 			authoAttr.setRoll(roll); 
 			authoAttr.setPersonnummer(personnummer);

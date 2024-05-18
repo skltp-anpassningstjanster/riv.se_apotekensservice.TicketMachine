@@ -218,8 +218,6 @@ public class SAML2AssertionTicketGeneratorImpl implements SAML2AssertionTicketGe
 	 * {@inheritDoc}
 	 */
 	public Assertion getSignedAuthnAssertion(List<SAML2Attribute> saml2AuthnAttributes,Integer samlAssertionValidityInMinutes) {
-//		String nameQualifier = "Serial Number= SE2321000131-P000000068832, CN=SAML2 Test tool, O=Apotekens Service, L=Stockholm, C=SE";
-//		String nameIdValue = "SAML2 Test tool";
 		String nameQualifier = "Serial Number=" + defaultValues.getCertificateSerial() +","+ defaultValues.getCertificateSubject();
 		String nameIdValue = defaultValues.getCertificateSubjectName();
 		DateTime now = new DateTime();

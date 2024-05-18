@@ -12,7 +12,7 @@ import se.inera.pascal.ticket.core.ApseAuthorizationAttributes;
 import se.inera.pascal.ticket.core.ApseInfoAttributes;
 import se.inera.pascal.ticket.core.impl.SAML2AssertionTicketGeneratorLauncher;
 
-//utöka implementationen av ServiceLifecycle för att på ett enkelt sätt
+//ut√∂ka implementationen av ServiceLifecycle f√∂r att pp ett enkelt s√§tt
 //logga inkommande/klientens IP-nummer
 public class GenerateTicket implements ServiceLifecycle {
 
@@ -42,14 +42,14 @@ public class GenerateTicket implements ServiceLifecycle {
 		requestIP = (String) ctx.getMessageContext().getProperty("remoteaddr");
 	}
 
-	// används bara för BIF/LkTj-ticket för att sätta klientens IP
+	// anv¬änds bara f√∂r BIF/LkTj-ticket f√∂r att s√§tta klientens IP
 	protected void setIP(String ip) {
 		requestIP = ip;
-		// TODO: använda som infoAttribut?
+		// TODO: anv¬ända som infoAttribut?
 	}
 
-	// TODO: den skall tas bort som exponerad webservice före release
-	// denna metod/webservice används enbart i utvecklings- och testsyfte,
+	// TODO: den skall tas bort som exponerad webservice f√∂re release
+	// denna metod/webservice anv¬änds enbart i utvecklings- och testsyfte,
 	public WSReturn getTicket(String roll, String katalogId, String katalog, String forskrivarkod,
 			String legitimationskod, String yrkeskod, String befattningskod, String fornamn, String efternamn,
 			String arbetsplatskod, String arbetsplats, String postadress, String postnummer, String postort,
@@ -58,7 +58,7 @@ public class GenerateTicket implements ServiceLifecycle {
 		String logMess = "Incoming IP: " + requestIP;
 		logger.info(logMess);
 
-		// fil används enbart i testsyfte
+		// fil anv¬änds enbart i testsyfte
 		if (roll.startsWith("file:")) {
 			String file = roll.substring(5);
 			analyzeXML(file, false, true);
@@ -102,8 +102,8 @@ public class GenerateTicket implements ServiceLifecycle {
 	}
 
 	// anropas av LkTjTicket/BIFTicket
-	// sätter authorization-attributens default-värden. Ändras eventuell av
-	// värdena i biljetten
+	// s√§tter authorization-attributens default-v¬ärden. ¬Ändras eventuell av
+	// v¬ärdena i biljetten
 	protected void setIncomingAuthorizationAttributes(ApseAuthorizationAttributes attrs) {
 		if (launcher != null) {
 			launcher.setIncomingAuthorizationAttributes(attrs);
@@ -122,7 +122,7 @@ public class GenerateTicket implements ServiceLifecycle {
 		}
 	}
 
-	// analysera inkommande xml-sträng
+	// analysera inkommande xml-str¬äng
 	private void analyzeXML(String xml, boolean isBIF) {
 		analyzeXML(xml, isBIF, false);
 	}
@@ -139,7 +139,7 @@ public class GenerateTicket implements ServiceLifecycle {
 		}
 	}
 
-	// Hämtar datat från launcher-objektet och skapar retur-värdet
+	// H¬ämtar datat fr¬ån launcher-objektet och skapar retur-v¬ärdet
 	private WSReturn getReturnValue() {
 		String ticket;
 		String validTo;

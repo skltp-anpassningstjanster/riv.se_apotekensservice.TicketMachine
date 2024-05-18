@@ -106,7 +106,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 				String value = att.getValue();
 				// assertionID r den inkommande biljettens unika ID, vi
 				// teranvnder det vrdet
-				// och stter det som unikt id mot ApSe
+				// och sätter det som unikt id mot ApSe
 				if (name.contains(("AssertionID").toLowerCase())) { // TODO:
 																	// remove
 																	// hard
@@ -239,7 +239,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		return this.apseAuthentication;
 	}
 
-	// stt default-vrden, om de inte innehller ngot.
+	// sätt default-vrden, om de inte innehller ngot.
 	public void setIncomingAuthorizationAttributes(ApseAuthorizationAttributes attribs) {
 		if (StringUtils.isNotEmpty(attribs.getArbetsplats())) {
 			apseAuthorization.setArbetsplats(attribs.getArbetsplats());
