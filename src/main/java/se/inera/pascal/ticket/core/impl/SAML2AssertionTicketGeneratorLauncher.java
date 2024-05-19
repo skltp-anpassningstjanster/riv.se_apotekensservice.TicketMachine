@@ -49,7 +49,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 	public SAML2AssertionTicketGeneratorLauncher() throws Exception {
 		attributeSet = new SAML2AssertionAttributeSet();
 		logger.debug("Loading ApplicationContext");
-		// commandtool.xml innehller alla beans som springframework skall
+		// commandtool.xml innehåller alla beans som springframework skall
 		// starta upp
 		try {
 			if(appCtx == null) {
