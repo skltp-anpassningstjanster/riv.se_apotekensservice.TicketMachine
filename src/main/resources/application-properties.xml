@@ -4,13 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="ignoreResourceNotFound" value="true" />
         <property name="locations">
             <list>
                 <value>classpath:/application.properties</value>
                 <value>classpath:/apse_authorization.properties</value>
                 <value>classpath:/apse_authentication.properties</value>
                 <value>classpath:/apse_info.properties</value>
+                <value>file:config/application.properties</value>
+                <value>file:application.properties</value>
             </list>
         </property>
     </bean>
