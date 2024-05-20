@@ -9,9 +9,9 @@
     <version>1.1.3-RC2-SNAPSHOT</version>
 
     <properties>
-        <spring.version>5.3.31</spring.version>
+        <spring.version>5.3.35</spring.version>
 
-        <opensaml.version>2.4.1</opensaml.version>
+        <opensaml.version>2.5.3</opensaml.version>
         <slf4j.version>2.0.12</slf4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-gpg-plugin.version>1.1</maven-gpg-plugin.version>
@@ -43,7 +43,6 @@
         </snapshotRepository>
     </distributionManagement>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -60,7 +59,18 @@
                     <artifactId>log4j-over-slf4j</artifactId>
                     <groupId>org.slf4j</groupId>
                 </exclusion>
+                <!-- Excluding an old Java 5 transient dependency module -->
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-jdk15</artifactId>
+                </exclusion>
             </exclusions>
+        </dependency>
+        <!-- BouncyCastle needed for transient dependency 'xmltooling' within OpenSAML above. -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk18on</artifactId>
+            <version>1.77</version>
         </dependency>
         <dependency>
             <groupId>org.apache.axis</groupId>
