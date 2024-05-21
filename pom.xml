@@ -1,12 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
     <artifactId>TicketMachine</artifactId>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.2.0-RC1</version>
 
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
@@ -26,7 +25,7 @@
         <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</url>
         <connection>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</connection>
         <developerConnection>scm:git:https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.2.0-RC1</tag>
     </scm>
 
     <distributionManagement>
