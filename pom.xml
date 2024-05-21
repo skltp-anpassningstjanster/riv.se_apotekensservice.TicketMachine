@@ -71,14 +71,6 @@
             <version>1.78</version>
         </dependency>
 
-        <!-- This is from 2006, no newer versions can be downloaded, and is needed for compile of LkTj and BIF Tickets. -->
-        <dependency>
-            <groupId>org.apache.axis</groupId>
-            <artifactId>axis</artifactId>
-            <version>1.4</version>
-            <optional>true</optional>
-        </dependency>
-
         <!-- This is from 2005, no newer versions can be downloaded, and is needed for compile of LkTj and BIF Tickets. -->
         <dependency>
             <groupId>javax.xml</groupId>
@@ -139,7 +131,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
