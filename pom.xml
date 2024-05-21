@@ -23,9 +23,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine</url>
-        <connection>scm:git:git://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</connection>
-        <developerConnection>scm:git:git://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</developerConnection>
+        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</url>
+        <connection>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</connection>
+        <developerConnection>scm:git:https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
