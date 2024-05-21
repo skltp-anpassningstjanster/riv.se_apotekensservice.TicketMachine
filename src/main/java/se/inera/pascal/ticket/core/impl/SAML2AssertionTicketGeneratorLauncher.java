@@ -61,7 +61,7 @@ public class SAML2AssertionTicketGeneratorLauncher extends SAML2AssertionTicketG
 		} catch (Exception e) {
 			errorString = "Failed initialize launcher application!";
 			logger.error(errorString, e);
-			throw new Exception(errorString);
+			throw new Exception(errorString, e);
 		}
 	}
 
