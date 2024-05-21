@@ -6,17 +6,19 @@
     <artifactId>TicketMachine</artifactId>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
-    <version>1.1.3-RC2-SNAPSHOT</version>
+    <version>1.2.0-SNAPSHOT</version>
 
     <properties>
-        <spring.version>5.3.35</spring.version>
-        <opensaml.version>2.5.3</opensaml.version>
-        <slf4j.version>2.0.13</slf4j.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jacoco.plugin.version>0.8.7</jacoco.plugin.version>
         <maven.compiler.release>17</maven.compiler.release>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+
+        <spring.version>5.3.35</spring.version>
+        <opensaml.version>2.5.3</opensaml.version>
+        <slf4j.version>2.0.13</slf4j.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jacoco.plugin.version>0.8.7</jacoco.plugin.version>
         <javax.xml.soap-api.version>1.4.0</javax.xml.soap-api.version>
     </properties>
 
@@ -178,6 +180,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -186,22 +189,22 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptors>
-                        <descriptor>src/main/assembly/assembly.xml</descriptor>
-                    </descriptors>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <descriptors>-->
+<!--                        <descriptor>src/main/assembly/assembly.xml</descriptor>-->
+<!--                    </descriptors>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>single</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
