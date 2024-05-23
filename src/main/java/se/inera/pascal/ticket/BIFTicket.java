@@ -4,9 +4,9 @@ import javax.xml.rpc.ServiceException;
 import javax.xml.rpc.server.ServiceLifecycle;
 import javax.xml.rpc.server.ServletEndpointContext;
 
-import org.apache.axis.encoding.Base64;
-
 import se.inera.pascal.ticket.core.ApseAuthorizationAttributes;
+
+import java.util.Base64;
 
 public class BIFTicket implements ServiceLifecycle {
 
@@ -36,7 +36,8 @@ public class BIFTicket implements ServiceLifecycle {
 		if (b64BIFTicket == null) {
 			b64BIFTicket = "";
 		}
-		String bifTicket = new String(Base64.decode(b64BIFTicket));
+
+		String bifTicket = new String(Base64.getDecoder().decode(b64BIFTicket));
 
 		if (roll == null) {
 			roll = "";

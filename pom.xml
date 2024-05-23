@@ -1,12 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.skltp.adapterservices.se.apotekensservice</groupId>
     <artifactId>TicketMachine</artifactId>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.2.0-RC5-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
@@ -14,7 +13,7 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <spring.version>5.3.35</spring.version>
-        <opensaml.version>2.5.3</opensaml.version>
+        <opensaml.version>2.6.4</opensaml.version>
         <slf4j.version>2.0.13</slf4j.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,9 +22,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine</url>
-        <connection>scm:git:git://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</connection>
-        <developerConnection>scm:git:git://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</developerConnection>
+        <url>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</url>
+        <connection>https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</connection>
+        <developerConnection>scm:git:https://github.com/skltp-anpassningstjanster/riv.se_apotekensservice.TicketMachine.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -54,14 +53,10 @@
             <artifactId>opensaml</artifactId>
             <version>${opensaml.version}</version>
             <exclusions>
-                <exclusion>
-                    <artifactId>log4j-over-slf4j</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-                <!-- Excluding an old Java 5 transient dependency module -->
+                <!-- Excluding an old Java 5+ transient dependency module, and using a J8+ module below instead -->
                 <exclusion>
                     <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcprov-jdk15</artifactId>
+                    <artifactId>bcprov-jdk15on</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -69,15 +64,7 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.77</version>
-        </dependency>
-
-        <!-- This is from 2006, no newer versions can be downloaded, and is needed for compile of LkTj and BIF Tickets. -->
-        <dependency>
-            <groupId>org.apache.axis</groupId>
-            <artifactId>axis</artifactId>
-            <version>1.4</version>
-            <optional>true</optional>
+            <version>1.78</version>
         </dependency>
 
         <!-- This is from 2005, no newer versions can be downloaded, and is needed for compile of LkTj and BIF Tickets. -->
@@ -110,6 +97,10 @@
                     <artifactId>commons-fileupload</artifactId>
                     <groupId>commons-fileupload</groupId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>commons-io</artifactId>
+                    <groupId>commons-io</groupId>
+                </exclusion>
             </exclusions>
         </dependency>
         <!-- AnitSamy needed for transient dependency within ESAPI above. -->
@@ -140,7 +131,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -163,20 +154,21 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.3</version>
-                    <configuration>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <tagNameFormat>v@{project.version}</tagNameFormat>
-                        <pushChanges>false</pushChanges>
-                        <localCheckout>true</localCheckout>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
+
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+<!--                    <pushChanges>false</pushChanges>-->
+                    <localCheckout>true</localCheckout>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

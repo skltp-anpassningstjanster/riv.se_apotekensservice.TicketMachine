@@ -4,9 +4,9 @@ import javax.xml.rpc.ServiceException;
 import javax.xml.rpc.server.ServiceLifecycle;
 import javax.xml.rpc.server.ServletEndpointContext;
 
-import org.apache.axis.encoding.Base64;
-
 import se.inera.pascal.ticket.core.ApseAuthorizationAttributes;
+
+import java.util.Base64;
 
 // utöka implementationen av ServiceLifecycle för att på ett enkelt sätt
 // logga inkommande/klientens IP-nummer
@@ -41,7 +41,9 @@ public class LkTjTicket implements ServiceLifecycle {
 		if (b64LkTjTicket == null) {
 			b64LkTjTicket = "";
 		}
-		String lktjTicket = new String(Base64.decode(b64LkTjTicket));
+
+		String lktjTicket = new String(Base64.getDecoder().decode(b64LkTjTicket));
+
 		if (roll == null) {
 			roll = "";
 		}
