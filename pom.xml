@@ -18,8 +18,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jacoco.plugin.version>0.8.12</jacoco.plugin.version>
-        <javax.xml.soap-api.version>1.4.0</javax.xml.soap-api.version>
-        <jakarta.xml.soap-api.version>1.4.2</jakarta.xml.soap-api.version>
+        <jakarta.xml.soap-api.version>3.0.2</jakarta.xml.soap-api.version>
     </properties>
 
     <scm>
