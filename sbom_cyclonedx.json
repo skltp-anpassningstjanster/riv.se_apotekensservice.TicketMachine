@@ -1,0 +1,2225 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:11aa7aa6-6622-4e42-9f52-7cfe3f8800ab",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-03-20T14:13:41+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.58.2"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "09e887b4-955a-4ae3-8dde-03495c91ddbb",
+      "type": "application",
+      "name": ".",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "8058e105-1198-4e24-88ec-0d3c3915ea51",
+      "type": "application",
+      "name": "pom.xml",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/ca.juliusdavies/not-yet-commons-ssl@0.3.9",
+      "type": "library",
+      "group": "ca.juliusdavies",
+      "name": "not-yet-commons-ssl",
+      "version": "0.3.9",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/ca.juliusdavies/not-yet-commons-ssl@0.3.9",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ca.juliusdavies:not-yet-commons-ssl:0.3.9"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/commons-codec/commons-codec@1.7",
+      "type": "library",
+      "group": "commons-codec",
+      "name": "commons-codec",
+      "version": "1.7",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/commons-codec/commons-codec@1.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "commons-codec:commons-codec:1.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/commons-collections/commons-collections@3.2.1",
+      "type": "library",
+      "group": "commons-collections",
+      "name": "commons-collections",
+      "version": "3.2.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/commons-collections/commons-collections@3.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "commons-collections:commons-collections:3.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
+      "type": "library",
+      "group": "commons-httpclient",
+      "name": "commons-httpclient",
+      "version": "3.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "commons-httpclient:commons-httpclient:3.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/commons-lang/commons-lang@2.6",
+      "type": "library",
+      "group": "commons-lang",
+      "name": "commons-lang",
+      "version": "2.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/commons-lang/commons-lang@2.6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "commons-lang:commons-lang:2.6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "type": "library",
+      "group": "commons-logging",
+      "name": "commons-logging",
+      "version": "1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "commons-logging:commons-logging:1.1.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.3",
+      "type": "library",
+      "group": "jakarta.activation",
+      "name": "jakarta.activation-api",
+      "version": "2.1.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "jakarta.activation:jakarta.activation-api:2.1.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/jakarta.xml.soap/jakarta.xml.soap-api@3.0.2",
+      "type": "library",
+      "group": "jakarta.xml.soap",
+      "name": "jakarta.xml.soap-api",
+      "version": "3.0.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:maven/jakarta.xml.soap/jakarta.xml.soap-api@3.0.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "jakarta.xml.soap:jakarta.xml.soap-api:3.0.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/joda-time/joda-time@2.2",
+      "type": "library",
+      "group": "joda-time",
+      "name": "joda-time",
+      "version": "2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/joda-time/joda-time@2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "joda-time:joda-time:2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache-extras.beanshell/bsh@2.0b6",
+      "type": "library",
+      "group": "org.apache-extras.beanshell",
+      "name": "bsh",
+      "version": "2.0b6",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache-extras.beanshell/bsh@2.0b6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache-extras.beanshell:bsh:2.0b6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.commons/commons-collections4@4.5.0-M2",
+      "type": "library",
+      "group": "org.apache.commons",
+      "name": "commons-collections4",
+      "version": "4.5.0-M2",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.commons/commons-collections4@4.5.0-M2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.commons:commons-collections4:4.5.0-M2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1",
+      "type": "library",
+      "group": "org.apache.httpcomponents.client5",
+      "name": "httpclient5",
+      "version": "5.4.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.httpcomponents.client5:httpclient5:5.4.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1",
+      "type": "library",
+      "group": "org.apache.httpcomponents.core5",
+      "name": "httpcore5-h2",
+      "version": "5.3.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.httpcomponents.core5:httpcore5-h2:5.3.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.1",
+      "type": "library",
+      "group": "org.apache.httpcomponents.core5",
+      "name": "httpcore5",
+      "version": "5.3.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.httpcomponents.core5:httpcore5:5.3.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
+      "type": "library",
+      "group": "org.apache.santuario",
+      "name": "xmlsec",
+      "version": "1.5.7",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.santuario:xmlsec:1.5.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.velocity/velocity@1.7",
+      "type": "library",
+      "group": "org.apache.velocity",
+      "name": "velocity",
+      "version": "1.7",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.velocity/velocity@1.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.velocity:velocity:1.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.xmlgraphics/batik-constants@1.18",
+      "type": "library",
+      "group": "org.apache.xmlgraphics",
+      "name": "batik-constants",
+      "version": "1.18",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-constants@1.18",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.xmlgraphics:batik-constants:1.18"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.xmlgraphics/batik-css@1.18",
+      "type": "library",
+      "group": "org.apache.xmlgraphics",
+      "name": "batik-css",
+      "version": "1.18",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-css@1.18",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.xmlgraphics:batik-css:1.18"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.xmlgraphics/batik-i18n@1.18",
+      "type": "library",
+      "group": "org.apache.xmlgraphics",
+      "name": "batik-i18n",
+      "version": "1.18",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-i18n@1.18",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.xmlgraphics:batik-i18n:1.18"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.xmlgraphics/batik-shared-resources@1.18",
+      "type": "library",
+      "group": "org.apache.xmlgraphics",
+      "name": "batik-shared-resources",
+      "version": "1.18",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-shared-resources@1.18",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.xmlgraphics:batik-shared-resources:1.18"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.xmlgraphics/batik-util@1.18",
+      "type": "library",
+      "group": "org.apache.xmlgraphics",
+      "name": "batik-util",
+      "version": "1.18",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-util@1.18",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.xmlgraphics:batik-util:1.18"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.apache.xmlgraphics/xmlgraphics-commons@2.10",
+      "type": "library",
+      "group": "org.apache.xmlgraphics",
+      "name": "xmlgraphics-commons",
+      "version": "2.10",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.xmlgraphics/xmlgraphics-commons@2.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.apache.xmlgraphics:xmlgraphics-commons:2.10"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.bouncycastle/bcprov-jdk18on@1.80",
+      "type": "library",
+      "group": "org.bouncycastle",
+      "name": "bcprov-jdk18on",
+      "version": "1.80",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.bouncycastle/bcprov-jdk18on@1.80",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.bouncycastle:bcprov-jdk18on:1.80"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.htmlunit/neko-htmlunit@4.6.0",
+      "type": "library",
+      "group": "org.htmlunit",
+      "name": "neko-htmlunit",
+      "version": "4.6.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.htmlunit/neko-htmlunit@4.6.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.htmlunit:neko-htmlunit:4.6.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.opensaml/opensaml@2.6.4",
+      "type": "library",
+      "group": "org.opensaml",
+      "name": "opensaml",
+      "version": "2.6.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.opensaml/opensaml@2.6.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.opensaml:opensaml:2.6.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.opensaml/openws@1.5.4",
+      "type": "library",
+      "group": "org.opensaml",
+      "name": "openws",
+      "version": "1.5.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.opensaml/openws@1.5.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.opensaml:openws:1.5.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.opensaml/xmltooling@1.4.4",
+      "type": "library",
+      "group": "org.opensaml",
+      "name": "xmltooling",
+      "version": "1.4.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.opensaml/xmltooling@1.4.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.opensaml:xmltooling:1.4.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.owasp.antisamy/antisamy@1.7.7",
+      "type": "library",
+      "group": "org.owasp.antisamy",
+      "name": "antisamy",
+      "version": "1.7.7",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.owasp.antisamy/antisamy@1.7.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.owasp.antisamy:antisamy:1.7.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.owasp.esapi/esapi@2.6.0.0",
+      "type": "library",
+      "group": "org.owasp.esapi",
+      "name": "esapi",
+      "version": "2.6.0.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        },
+        {
+          "license": {
+            "name": "CC-BY-SA-3.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.owasp.esapi/esapi@2.6.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.owasp.esapi:esapi:2.6.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/org.slf4j/slf4j-api@2.0.17",
+      "type": "library",
+      "group": "org.slf4j",
+      "name": "slf4j-api",
+      "version": "2.0.17",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.slf4j/slf4j-api@2.0.17",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "org.slf4j:slf4j-api:2.0.17"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0",
+      "type": "library",
+      "group": "se.skltp.adapterservices.se.apotekensservice",
+      "name": "TicketMachine",
+      "version": "1.3.0",
+      "purl": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "se.skltp.adapterservices.se.apotekensservice:TicketMachine:1.3.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/xerces/xercesImpl@2.12.2",
+      "type": "library",
+      "group": "xerces",
+      "name": "xercesImpl",
+      "version": "2.12.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/xerces/xercesImpl@2.12.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "xerces:xercesImpl:2.12.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/xml-apis/xml-apis-ext@1.3.04",
+      "type": "library",
+      "group": "xml-apis",
+      "name": "xml-apis-ext",
+      "version": "1.3.04",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/xml-apis/xml-apis-ext@1.3.04",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "xml-apis:xml-apis-ext:1.3.04"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/xml-apis/xml-apis@1.4.01",
+      "type": "library",
+      "group": "xml-apis",
+      "name": "xml-apis",
+      "version": "1.4.01",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        },
+        {
+          "license": {
+            "name": "The SAX License"
+          }
+        },
+        {
+          "license": {
+            "name": "W3C"
+          }
+        }
+      ],
+      "purl": "pkg:maven/xml-apis/xml-apis@1.4.01",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "xml-apis:xml-apis:1.4.01"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:maven/xom/xom@1.3.9",
+      "type": "library",
+      "group": "xom",
+      "name": "xom",
+      "version": "1.3.9",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-2.1-only"
+          }
+        }
+      ],
+      "purl": "pkg:maven/xom/xom@1.3.9",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "xom:xom:1.3.9"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pom"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "09e887b4-955a-4ae3-8dde-03495c91ddbb",
+      "dependsOn": [
+        "8058e105-1198-4e24-88ec-0d3c3915ea51"
+      ]
+    },
+    {
+      "ref": "8058e105-1198-4e24-88ec-0d3c3915ea51",
+      "dependsOn": [
+        "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0"
+      ]
+    },
+    {
+      "ref": "pkg:maven/ca.juliusdavies/not-yet-commons-ssl@0.3.9",
+      "dependsOn": [
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1"
+      ]
+    },
+    {
+      "ref": "pkg:maven/commons-codec/commons-codec@1.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/commons-collections/commons-collections@3.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
+      "dependsOn": [
+        "pkg:maven/commons-codec/commons-codec@1.7"
+      ]
+    },
+    {
+      "ref": "pkg:maven/commons-lang/commons-lang@2.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/commons-logging/commons-logging@1.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/jakarta.xml.soap/jakarta.xml.soap-api@3.0.2",
+      "dependsOn": [
+        "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.3"
+      ]
+    },
+    {
+      "ref": "pkg:maven/joda-time/joda-time@2.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache-extras.beanshell/bsh@2.0b6",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.commons/commons-collections4@4.5.0-M2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1",
+      "dependsOn": [
+        "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
+      "dependsOn": [
+        "pkg:maven/commons-logging/commons-logging@1.1.1"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.velocity/velocity@1.7",
+      "dependsOn": [
+        "pkg:maven/commons-collections/commons-collections@3.2.1",
+        "pkg:maven/commons-lang/commons-lang@2.6"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.xmlgraphics/batik-constants@1.18",
+      "dependsOn": [
+        "pkg:maven/org.apache.xmlgraphics/batik-shared-resources@1.18"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.xmlgraphics/batik-css@1.18",
+      "dependsOn": [
+        "pkg:maven/org.apache.xmlgraphics/batik-shared-resources@1.18",
+        "pkg:maven/org.apache.xmlgraphics/batik-util@1.18",
+        "pkg:maven/org.apache.xmlgraphics/xmlgraphics-commons@2.10",
+        "pkg:maven/xml-apis/xml-apis-ext@1.3.04"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.xmlgraphics/batik-i18n@1.18",
+      "dependsOn": [
+        "pkg:maven/org.apache.xmlgraphics/batik-shared-resources@1.18"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.xmlgraphics/batik-shared-resources@1.18",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.xmlgraphics/batik-util@1.18",
+      "dependsOn": [
+        "pkg:maven/org.apache.xmlgraphics/batik-constants@1.18",
+        "pkg:maven/org.apache.xmlgraphics/batik-i18n@1.18",
+        "pkg:maven/org.apache.xmlgraphics/batik-shared-resources@1.18"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.xmlgraphics/xmlgraphics-commons@2.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.bouncycastle/bcprov-jdk18on@1.80",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.htmlunit/neko-htmlunit@4.6.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.opensaml/opensaml@2.6.4",
+      "dependsOn": [
+        "pkg:maven/commons-codec/commons-codec@1.7",
+        "pkg:maven/commons-collections/commons-collections@3.2.1",
+        "pkg:maven/commons-lang/commons-lang@2.6",
+        "pkg:maven/joda-time/joda-time@2.2",
+        "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
+        "pkg:maven/org.apache.velocity/velocity@1.7",
+        "pkg:maven/org.opensaml/openws@1.5.4",
+        "pkg:maven/org.owasp.esapi/esapi@2.6.0.0"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.opensaml/openws@1.5.4",
+      "dependsOn": [
+        "pkg:maven/commons-codec/commons-codec@1.7",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1",
+        "pkg:maven/joda-time/joda-time@2.2",
+        "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
+        "pkg:maven/org.opensaml/xmltooling@1.4.4"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.opensaml/xmltooling@1.4.4",
+      "dependsOn": [
+        "pkg:maven/ca.juliusdavies/not-yet-commons-ssl@0.3.9",
+        "pkg:maven/commons-codec/commons-codec@1.7",
+        "pkg:maven/joda-time/joda-time@2.2",
+        "pkg:maven/org.apache.santuario/xmlsec@1.5.7"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.owasp.antisamy/antisamy@1.7.7",
+      "dependsOn": [
+        "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1",
+        "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.1",
+        "pkg:maven/org.apache.xmlgraphics/batik-css@1.18",
+        "pkg:maven/org.htmlunit/neko-htmlunit@4.6.0",
+        "pkg:maven/xerces/xercesImpl@2.12.2",
+        "pkg:maven/xml-apis/xml-apis-ext@1.3.04",
+        "pkg:maven/xml-apis/xml-apis@1.4.01"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.owasp.esapi/esapi@2.6.0.0",
+      "dependsOn": [
+        "pkg:maven/commons-lang/commons-lang@2.6",
+        "pkg:maven/org.apache-extras.beanshell/bsh@2.0b6",
+        "pkg:maven/org.apache.commons/commons-collections4@4.5.0-M2",
+        "pkg:maven/org.owasp.antisamy/antisamy@1.7.7",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.17",
+        "pkg:maven/xml-apis/xml-apis@1.4.01",
+        "pkg:maven/xom/xom@1.3.9"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.slf4j/slf4j-api@2.0.17",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0",
+      "dependsOn": [
+        "pkg:maven/jakarta.xml.soap/jakarta.xml.soap-api@3.0.2",
+        "pkg:maven/org.bouncycastle/bcprov-jdk18on@1.80",
+        "pkg:maven/org.opensaml/opensaml@2.6.4",
+        "pkg:maven/org.owasp.esapi/esapi@2.6.0.0",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.17"
+      ]
+    },
+    {
+      "ref": "pkg:maven/xerces/xercesImpl@2.12.2",
+      "dependsOn": [
+        "pkg:maven/xml-apis/xml-apis@1.4.01"
+      ]
+    },
+    {
+      "ref": "pkg:maven/xml-apis/xml-apis-ext@1.3.04",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/xml-apis/xml-apis@1.4.01",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/xom/xom@1.3.9",
+      "dependsOn": []
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2012-5783",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "amazon"
+          },
+          "severity": "high"
+        },
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 5.8,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+        },
+        {
+          "source": {
+            "name": "oracle-oval"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "photon"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 3.7,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        {
+          "source": {
+            "name": "ubuntu"
+          },
+          "severity": "low"
+        }
+      ],
+      "cwes": [
+        295
+      ],
+      "description": "Apache Commons HttpClient 3.x, as used in Amazon Flexible Payments Service (FPS) merchant Java SDK and other products, does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.",
+      "recommendation": "Upgrade commons-httpclient:commons-httpclient to version 4.0",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2012-5783"
+        },
+        {
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00078.html"
+        },
+        {
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-04/msg00040.html"
+        },
+        {
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-04/msg00041.html"
+        },
+        {
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-04/msg00053.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0270.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0679.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0680.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0681.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0682.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1147.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1853.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-0224.html"
+        },
+        {
+          "url": "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf"
+        },
+        {
+          "url": "http://www.securityfocus.com/bid/58073"
+        },
+        {
+          "url": "http://www.ubuntu.com/usn/USN-2769-1"
+        },
+        {
+          "url": "https://access.redhat.com/errata/RHSA-2017:0868"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2012-5783"
+        },
+        {
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/79984"
+        },
+        {
+          "url": "https://github.com/apache/httpcomponents-client"
+        },
+        {
+          "url": "https://issues.apache.org/jira/browse/HTTPCLIENT-1265"
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2012-5783.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2013-0270.html"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-5783"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-2769-1"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2012-5783"
+        }
+      ],
+      "published": "2012-11-04T22:55:03+00:00",
+      "updated": "2024-11-21T01:45:12+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/commons-httpclient/commons-httpclient@3.1",
+          "versions": [
+            {
+              "version": "3.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2014-3604",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 6.8,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 5.8,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+        }
+      ],
+      "cwes": [
+        310
+      ],
+      "description": "Certificates.java in Not Yet Commons SSL before 0.3.15 does not properly verify that the server hostname matches a domain name in the subject's Common Name (CN) field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.",
+      "recommendation": "Upgrade ca.juliusdavies:not-yet-commons-ssl to version 0.3.15",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2014-3604"
+        },
+        {
+          "url": "http://juliusdavies.ca/svn/viewvc.cgi/not-yet-commons-ssl?view=rev&revision=172"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-1888.html"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2014-3604"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1131803"
+        },
+        {
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/97659"
+        },
+        {
+          "url": "https://github.com/victims/victims-cve-db/blob/master/database/java/2014/3604.yaml"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2014-3604"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2014-3604"
+        }
+      ],
+      "published": "2014-10-25T00:55:03+00:00",
+      "updated": "2024-11-21T02:08:29+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/ca.juliusdavies/not-yet-commons-ssl@0.3.9",
+          "versions": [
+            {
+              "version": "0.3.9",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2015-1796",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "severity": "medium"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 6.3,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:M/Au:S/C:C/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        254
+      ],
+      "description": "The PKIX trust engines in Shibboleth Identity Provider before 2.4.4 and OpenSAML Java (OpenSAML-J) before 2.6.5 trust candidate X.509 credentials when no trusted names are available for the entityID, which allows remote attackers to impersonate an entity via a certificate issued by a shibmd:KeyAuthority trust anchor.",
+      "recommendation": "Upgrade org.opensaml:opensaml to version 2.6.5",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2015-1796"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-1176.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-1177.html"
+        },
+        {
+          "url": "http://shibboleth.net/community/advisories/secadv_20150225.txt"
+        },
+        {
+          "url": "http://www.securityfocus.com/bid/75370"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2015-1796"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-1796"
+        },
+        {
+          "url": "https://shibboleth.net/community/advisories/secadv_20150225.txt"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2015-1796"
+        }
+      ],
+      "published": "2015-07-08T15:59:02+00:00",
+      "updated": "2024-11-21T02:26:09+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.opensaml/opensaml@2.6.4",
+          "versions": [
+            {
+              "version": "2.6.4",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2015-6420",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "severity": "high"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "cwes": [
+        502
+      ],
+      "description": "Serialized-object interfaces in certain Cisco Collaboration and Social Media; Endpoint Clients and Client Software; Network Application, Service, and Acceleration; Network and Content Security Devices; Network Management and Provisioning; Routing and Switching - Enterprise and Service Provider; Unified Computing; Voice and Unified Communications Devices; Video, Streaming, TelePresence, and Transcoding Devices; Wireless; and Cisco Hosted Services products allow remote attackers to execute arbitrary commands via a crafted serialized Java object, related to the Apache Commons Collections (ACC) library.",
+      "recommendation": "Upgrade commons-collections:commons-collections to version 3.2.2",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2015-6420"
+        },
+        {
+          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization"
+        },
+        {
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html"
+        },
+        {
+          "url": "http://www.securityfocus.com/bid/78872"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2306.05534"
+        },
+        {
+          "url": "https://github.com/apache/commons-collections"
+        },
+        {
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05376917"
+        },
+        {
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05390722"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r352e40ca9874d1beb4ad95403792adca7eb295e6bc3bd7b65fabcc21%40%3Ccommits.samza.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r352e40ca9874d1beb4ad95403792adca7eb295e6bc3bd7b65fabcc21@%3Ccommits.samza.apache.org%3E"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-6420"
+        },
+        {
+          "url": "https://www.kb.cert.org/vuls/id/581311"
+        },
+        {
+          "url": "https://www.tenable.com/security/research/tra-2017-14"
+        },
+        {
+          "url": "https://www.tenable.com/security/research/tra-2017-23"
+        }
+      ],
+      "published": "2015-12-15T05:59:07+00:00",
+      "updated": "2024-11-21T02:34:57+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/commons-collections/commons-collections@3.2.1",
+          "versions": [
+            {
+              "version": "3.2.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2015-7501",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "amazon"
+          },
+          "severity": "high"
+        },
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 10,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "source": {
+            "name": "oracle-oval"
+          },
+          "severity": "high"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 7.5,
+          "severity": "critical",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "cwes": [
+        502
+      ],
+      "description": "Red Hat JBoss A-MQ 6.x; BPM Suite (BPMS) 6.x; BRMS 6.x and 5.x; Data Grid (JDG) 6.x; Data Virtualization (JDV) 6.x and 5.x; Enterprise Application Platform 6.x, 5.x, and 4.3.x; Fuse 6.x; Fuse Service Works (FSW) 6.x; Operations Network (JBoss ON) 3.x; Portal 6.x; SOA Platform (SOA-P) 5.x; Web Server (JWS) 3.x; Red Hat OpenShift/xPAAS 3.x; and Red Hat Subscription Asset Manager 1.3 allow remote attackers to execute arbitrary commands via a crafted serialized Java object, related to the Apache Commons Collections (ACC) library.",
+      "recommendation": "Upgrade commons-collections:commons-collections to version 3.2.2",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2015-7501"
+        },
+        {
+          "url": "http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2500.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2501.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2502.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2514.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2516.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2517.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2521.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2522.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2524.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2670.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2671.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-0040.html"
+        },
+        {
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-1773.html"
+        },
+        {
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html"
+        },
+        {
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html"
+        },
+        {
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html"
+        },
+        {
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html"
+        },
+        {
+          "url": "http://www.securityfocus.com/bid/78215"
+        },
+        {
+          "url": "http://www.securitytracker.com/id/1034097"
+        },
+        {
+          "url": "http://www.securitytracker.com/id/1037052"
+        },
+        {
+          "url": "http://www.securitytracker.com/id/1037053"
+        },
+        {
+          "url": "http://www.securitytracker.com/id/1037640"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2015-7501"
+        },
+        {
+          "url": "https://access.redhat.com/security/vulnerabilities/2059393"
+        },
+        {
+          "url": "https://access.redhat.com/solutions/2045023"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2306.05534.pdf"
+        },
+        {
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1279330"
+        },
+        {
+          "url": "https://commons.apache.org/proper/commons-collections/release_4_1.html"
+        },
+        {
+          "url": "https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability"
+        },
+        {
+          "url": "https://github.com/apache/commons-collections"
+        },
+        {
+          "url": "https://github.com/jensdietrich/xshady-release/tree/main/CVE-2015-7501"
+        },
+        {
+          "url": "https://issues.apache.org/jira/browse/COLLECTIONS-580."
+        },
+        {
+          "url": "https://linux.oracle.com/cve/CVE-2015-7501.html"
+        },
+        {
+          "url": "https://linux.oracle.com/errata/ELSA-2015-2671.html"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-7501"
+        },
+        {
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-2536.html"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20240216-0010/"
+        },
+        {
+          "url": "https://sourceforge.net/p/collections/code/HEAD/tree"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2015-7501"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpujul2020.html"
+        }
+      ],
+      "published": "2017-11-09T17:29:00+00:00",
+      "updated": "2024-11-21T02:36:53+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/commons-collections/commons-collections@3.2.1",
+          "versions": [
+            {
+              "version": "3.2.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2020-13936",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "amazon"
+          },
+          "severity": "high"
+        },
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 9,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "source": {
+            "name": "ubuntu"
+          },
+          "severity": "medium"
+        }
+      ],
+      "description": "An attacker that is able to modify Velocity templates may execute arbitrary Java code or run arbitrary system commands with the same privileges as the account running the Servlet container. This applies to applications that allow untrusted users to upload/modify velocity templates running Apache Velocity Engine versions up to 2.2.",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2020-13936"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2021/03/10/1"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2020-13936"
+        },
+        {
+          "url": "https://github.com/apache/velocity-engine"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r01043f584cbd47959fabe18fff64de940f81a65024bb8dddbda31d9a%40%3Cuser.velocity.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r01043f584cbd47959fabe18fff64de940f81a65024bb8dddbda31d9a@%3Cuser.velocity.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r0bc98e9cd080b4a13b905c571b9bed87e1a0878d44dbf21487c6cca4%40%3Cdev.santuario.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r0bc98e9cd080b4a13b905c571b9bed87e1a0878d44dbf21487c6cca4@%3Cdev.santuario.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r17cb932fab14801b14e5b97a7f05192f4f366ef260c10d4a8dba8ac9%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r17cb932fab14801b14e5b97a7f05192f4f366ef260c10d4a8dba8ac9@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r293284c6806c73f51098001ea86a14271c39f72cd76af9e946d9d9ad%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r293284c6806c73f51098001ea86a14271c39f72cd76af9e946d9d9ad@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r39de20c7e9c808b1f96790875d33e58c9c0aabb44fd9227e7b3dc5da%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r39de20c7e9c808b1f96790875d33e58c9c0aabb44fd9227e7b3dc5da@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r3ea4c4c908505b20a4c268330dfe7188b90c84dcf777728d02068ae6%40%3Cannounce.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r3ea4c4c908505b20a4c268330dfe7188b90c84dcf777728d02068ae6@%3Cannounce.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r4cd59453b65d4ac290fcb3b71fdf32b4f1f8989025e89558deb5a245%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r4cd59453b65d4ac290fcb3b71fdf32b4f1f8989025e89558deb5a245@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r52a5129df402352adc34d052bab9234c8ef63596306506a89fdc7328%40%3Cusers.activemq.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r52a5129df402352adc34d052bab9234c8ef63596306506a89fdc7328@%3Cusers.activemq.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r7f209b837217d2a0fe5977fb692e7f15d37fa5de8214bcdc4c21d9a7%40%3Ccommits.turbine.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r7f209b837217d2a0fe5977fb692e7f15d37fa5de8214bcdc4c21d9a7@%3Ccommits.turbine.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r9dc2505651788ac668299774d9e7af4dc616be2f56fdc684d1170882%40%3Cusers.activemq.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r9dc2505651788ac668299774d9e7af4dc616be2f56fdc684d1170882@%3Cusers.activemq.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rb042f3b0090e419cc9f5a3d32cf0baff283ccd6fcb1caea61915d6b6%40%3Ccommits.velocity.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rb042f3b0090e419cc9f5a3d32cf0baff283ccd6fcb1caea61915d6b6@%3Ccommits.velocity.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rbee7270556f4172322936b5ecc9fabf0c09f00d4fa56c9de1963c340%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rbee7270556f4172322936b5ecc9fabf0c09f00d4fa56c9de1963c340@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rd2a89e17e8a9b451ce655f1a34117752ea1d18a22ce580d8baa824fd%40%3Ccommits.druid.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rd2a89e17e8a9b451ce655f1a34117752ea1d18a22ce580d8baa824fd@%3Ccommits.druid.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rd7e865c87f9043c21d9c1fd9d4df866061d9a08cfc322771160d8058%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rd7e865c87f9043c21d9c1fd9d4df866061d9a08cfc322771160d8058@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/re641197d204765130618086238c73dd2ce5a3f94b33785b587d72726%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/re641197d204765130618086238c73dd2ce5a3f94b33785b587d72726@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/re8e7482fe54d289fc0229e61cc64947b63b12c3c312e9f25bf6f3b8c%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/re8e7482fe54d289fc0229e61cc64947b63b12c3c312e9f25bf6f3b8c@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/reab5978b54a9f4c078402161e30a89c42807b198814acadbe6c862c7%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/reab5978b54a9f4c078402161e30a89c42807b198814acadbe6c862c7@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rf7d369de88dc88a1347006a3323b3746d849234db40a8edfd5ebc436%40%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rf7d369de88dc88a1347006a3323b3746d849234db40a8edfd5ebc436@%3Cdev.ws.apache.org%3E"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00019.html"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-13936"
+        },
+        {
+          "url": "https://security.gentoo.org/glsa/202107-52"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-6281-1"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-13936"
+        },
+        {
+          "url": "https://www.openwall.com/lists/oss-security/2021/03/10/1"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpujan2022.html"
+        }
+      ],
+      "published": "2021-03-10T08:15:14+00:00",
+      "updated": "2024-11-21T05:02:11+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.velocity/velocity@1.7",
+          "versions": [
+            {
+              "version": "1.7",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2021-40690",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 5,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 7.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "ubuntu"
+          },
+          "severity": "medium"
+        }
+      ],
+      "cwes": [
+        200
+      ],
+      "description": "All versions of Apache Santuario - XML Security for Java prior to 2.2.3 and 2.1.7 are vulnerable to an issue where the \"secureValidation\" property is not passed correctly when creating a KeyInfo from a KeyInfoReference element. This allows an attacker to abuse an XPath Transform to extract any local .xml files in a RetrievalMethod element.",
+      "recommendation": "Upgrade org.apache.santuario:xmlsec to version 2.2.3, 2.1.7",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2021-40690"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2021-40690"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r3b3f5ba9b0de8c9c125077b71af06026d344a709a8ba67db81ee9faa%40%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r3b3f5ba9b0de8c9c125077b71af06026d344a709a8ba67db81ee9faa@%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r401ecb7274794f040cd757b259ebe3e8c463ae74f7961209ccad3c59%40%3Cissues.cxf.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r401ecb7274794f040cd757b259ebe3e8c463ae74f7961209ccad3c59@%3Cissues.cxf.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r8848751b6a5dd78cc9e99d627e74fecfaffdfa1bb615dce827aad633%40%3Cdev.santuario.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r8a5c0ce9014bd07303aec1e5eed55951704878016465d3dae00e0c28%40%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r8a5c0ce9014bd07303aec1e5eed55951704878016465d3dae00e0c28@%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r9c100d53c84d54cf71975e3f0cfcc2856a8846554a04c99390156ce4%40%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/r9c100d53c84d54cf71975e3f0cfcc2856a8846554a04c99390156ce4@%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/raf352f95c19c0c4051af3180752cb69acbea88d0d066ab176c6170e8%40%3Cuser.poi.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/raf352f95c19c0c4051af3180752cb69acbea88d0d066ab176c6170e8@%3Cuser.poi.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rbbbac0759b12472abd0c278d32b5e0867bb21934df8e14e5e641597c%40%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rbbbac0759b12472abd0c278d32b5e0867bb21934df8e14e5e641597c@%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rbdac116aef912b563da54f4c152222c0754e32fb2f785519ac5e059f%40%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/rbdac116aef912b563da54f4c152222c0754e32fb2f785519ac5e059f@%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/re294cfc61f509512874ea514d8d64fd276253d54ac378ffa7a4880c8%40%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.apache.org/thread.html/re294cfc61f509512874ea514d8d64fd276253d54ac378ffa7a4880c8@%3Ccommits.tomee.apache.org%3E"
+        },
+        {
+          "url": "https://lists.debian.org/debian-lts-announce/2021/09/msg00015.html"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-40690"
+        },
+        {
+          "url": "https://santuario.apache.org/secadv.data/CVE-2021-40690.txt.asc"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230818-0002"
+        },
+        {
+          "url": "https://security.netapp.com/advisory/ntap-20230818-0002/"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5525-1"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-40690"
+        },
+        {
+          "url": "https://www.debian.org/security/2021/dsa-5010"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+        },
+        {
+          "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+        }
+      ],
+      "published": "2021-09-19T18:15:07+00:00",
+      "updated": "2024-11-21T06:24:34+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
+          "versions": [
+            {
+              "version": "1.5.7",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CVE-2023-44483",
+      "source": {
+        "name": "ghsa",
+        "url": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "ghsa"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "nvd"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source": {
+            "name": "redhat"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        532
+      ],
+      "description": "All versions of Apache Santuario - XML Security for Java prior to 2.2.6, 2.3.4, and 3.0.3, when using the JSR 105 API, are vulnerable to an issue where a private key may be disclosed in log files when generating an XML Signature and logging with debug level is enabled. Users are recommended to upgrade to version 2.2.6, 2.3.4, or 3.0.3, which fixes this issue.",
+      "recommendation": "Upgrade org.apache.santuario:xmlsec to version 2.3.4, 2.2.6, 3.0.3",
+      "advisories": [
+        {
+          "url": "https://avd.aquasec.com/nvd/cve-2023-44483"
+        },
+        {
+          "url": "http://www.openwall.com/lists/oss-security/2023/10/20/5"
+        },
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2023-44483"
+        },
+        {
+          "url": "https://github.com/apache/santuario-java"
+        },
+        {
+          "url": "https://lists.apache.org/thread/vmqbp9mfxtrf0kmbnnmbn3h9j6dr9q55"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44483"
+        },
+        {
+          "url": "https://santuario.apache.org/secadv.data/CVE-2023-44483.txt.asc?version=1&modificationDate=1697782758000&api=v2"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-44483"
+        }
+      ],
+      "published": "2023-10-20T10:15:12+00:00",
+      "updated": "2025-02-13T17:17:14+00:00",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.santuario/xmlsec@1.5.7",
+          "versions": [
+            {
+              "version": "1.5.7",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
