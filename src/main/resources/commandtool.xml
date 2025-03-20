@@ -11,9 +11,9 @@
 	   <bean id="assertionMarshaller" class="org.opensaml.saml2.core.impl.AssertionMarshaller" />
 	   <bean id="assertionUnmarshaller" class="org.opensaml.saml2.core.impl.AssertionUnmarshaller" />	   	     
 	   <bean id="secureRandomIdentifierGenerator" class="org.opensaml.common.impl.SecureRandomIdentifierGenerator" />
-	   <bean id="builderFactory" class="org.opensaml.Configuration" factory-method="getBuilderFactory" />
-	   <bean id="marshallerFactory" class="org.opensaml.Configuration" factory-method="getMarshallerFactory" />
-	   <bean id="secConfig" class="org.opensaml.Configuration" factory-method="getGlobalSecurityConfiguration" />
+	   <bean id="builderFactory" class="org.opensaml.xml.Configuration" factory-method="getBuilderFactory" />
+	   <bean id="marshallerFactory" class="org.opensaml.xml.Configuration" factory-method="getMarshallerFactory" />
+	   <bean id="secConfig" class="org.opensaml.xml.Configuration" factory-method="getGlobalSecurityConfiguration" />
        <bean id="keyInfoManager" factory-bean="secConfig" factory-method="getKeyInfoGeneratorManager" />
        <bean id="keyInfoGeneratorManager" factory-bean="keyInfoManager" factory-method="getDefaultManager" />
        

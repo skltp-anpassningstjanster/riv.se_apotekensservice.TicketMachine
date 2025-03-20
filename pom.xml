@@ -12,13 +12,13 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <spring.version>5.3.35</spring.version>
+        <spring.version>6.0.12</spring.version>
         <opensaml.version>2.6.4</opensaml.version>
-        <slf4j.version>2.0.13</slf4j.version>
+        <slf4j.version>2.0.17</slf4j.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jacoco.plugin.version>0.8.7</jacoco.plugin.version>
-        <javax.xml.soap-api.version>1.4.0</javax.xml.soap-api.version>
+        <jacoco.plugin.version>0.8.12</jacoco.plugin.version>
+        <jakarta.xml.soap-api.version>3.0.2</jakarta.xml.soap-api.version>
     </properties>
 
     <scm>
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.78</version>
+            <version>1.80</version>
         </dependency>
 
         <!-- This is from 2005, no newer versions can be downloaded, and is needed for compile of LkTj and BIF Tickets. -->
@@ -78,13 +78,8 @@
         <dependency>
             <groupId>org.owasp.esapi</groupId>
             <artifactId>esapi</artifactId>
-            <version>2.5.3.1</version>
+            <version>2.6.0.0</version>
             <exclusions>
-                <!-- Transient dependency AntiSamy replaced with newer version below, due to Vulnerability. -->
-                <exclusion>
-                    <groupId>org.owasp.antisamy</groupId>
-                    <artifactId>antisamy</artifactId>
-                </exclusion>
                 <exclusion>
                     <artifactId>commons-beanutils</artifactId>
                     <groupId>commons-beanutils</groupId>
@@ -103,17 +98,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- AnitSamy needed for transient dependency within ESAPI above. -->
-        <dependency>
-            <groupId>org.owasp.antisamy</groupId>
-            <artifactId>antisamy</artifactId>
-            <version>1.7.5</version>
-        </dependency>
 
         <dependency>
-            <groupId>javax.xml.soap</groupId>
-            <artifactId>javax.xml.soap-api</artifactId>
-            <version>${javax.xml.soap-api.version}</version>
+            <groupId>jakarta.xml.soap</groupId>
+            <artifactId>jakarta.xml.soap-api</artifactId>
+            <version>${jakarta.xml.soap-api.version}</version>
         </dependency>
 
         <!-- TEST DEPENDENCIES -->

@@ -1,7 +1,7 @@
 package se.inera.pascal.ticket.core.impl;
 
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
+import jakarta.xml.soap.SOAPException;
+import jakarta.xml.soap.SOAPMessage;
 
 import org.opensaml.saml2.core.Assertion;
 import org.opensaml.saml2.core.Response;
