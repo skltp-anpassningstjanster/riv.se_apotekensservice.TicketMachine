@@ -12,7 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <spring.version>6.0.12</spring.version>
+        <spring.version>6.1.17</spring.version>
         <opensaml.version>2.6.4</opensaml.version>
         <slf4j.version>2.0.17</slf4j.version>
 
