@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:11aa7aa6-6622-4e42-9f52-7cfe3f8800ab",
+  "serialNumber": "urn:uuid:74409625-a157-4b89-b936-7ba12f636132",
   "version": 1,
   "metadata": {
-    "timestamp": "2025-03-20T14:13:41+00:00",
+    "timestamp": "2025-03-21T11:02:10+00:00",
     "tools": {
       "components": [
         {
@@ -17,7 +17,7 @@
       ]
     },
     "component": {
-      "bom-ref": "09e887b4-955a-4ae3-8dde-03495c91ddbb",
+      "bom-ref": "3577ad28-ebc5-4c8f-a741-2c46358578d7",
       "type": "application",
       "name": ".",
       "properties": [
@@ -30,7 +30,7 @@
   },
   "components": [
     {
-      "bom-ref": "8058e105-1198-4e24-88ec-0d3c3915ea51",
+      "bom-ref": "c07e7e8d-d217-4402-a3ad-fe6da7228c90",
       "type": "application",
       "name": "pom.xml",
       "properties": [
@@ -800,16 +800,16 @@
       ]
     },
     {
-      "bom-ref": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0",
+      "bom-ref": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.1",
       "type": "library",
       "group": "se.skltp.adapterservices.se.apotekensservice",
       "name": "TicketMachine",
-      "version": "1.3.0",
-      "purl": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0",
+      "version": "1.3.1",
+      "purl": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.1",
       "properties": [
         {
           "name": "aquasecurity:trivy:PkgID",
-          "value": "se.skltp.adapterservices.se.apotekensservice:TicketMachine:1.3.0"
+          "value": "se.skltp.adapterservices.se.apotekensservice:TicketMachine:1.3.1"
         },
         {
           "name": "aquasecurity:trivy:PkgType",
@@ -930,15 +930,15 @@
   ],
   "dependencies": [
     {
-      "ref": "09e887b4-955a-4ae3-8dde-03495c91ddbb",
+      "ref": "3577ad28-ebc5-4c8f-a741-2c46358578d7",
       "dependsOn": [
-        "8058e105-1198-4e24-88ec-0d3c3915ea51"
+        "c07e7e8d-d217-4402-a3ad-fe6da7228c90"
       ]
     },
     {
-      "ref": "8058e105-1198-4e24-88ec-0d3c3915ea51",
+      "ref": "c07e7e8d-d217-4402-a3ad-fe6da7228c90",
       "dependsOn": [
-        "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0"
+        "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.1"
       ]
     },
     {
@@ -1124,7 +1124,7 @@
       "dependsOn": []
     },
     {
-      "ref": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.0",
+      "ref": "pkg:maven/se.skltp.adapterservices.se.apotekensservice/TicketMachine@1.3.1",
       "dependsOn": [
         "pkg:maven/jakarta.xml.soap/jakarta.xml.soap-api@3.0.2",
         "pkg:maven/org.bouncycastle/bcprov-jdk18on@1.80",
